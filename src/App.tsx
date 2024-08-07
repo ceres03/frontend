@@ -1,18 +1,26 @@
-import Teste from "./components/Teste";
-import Teste2 from "./components/Teste2";
-import "./index.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import './index.css';
+import Home from './pages/home/Home';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './pages/login/Login';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Teste />} />
-        <Route path="/teste" element={<Teste />} />
-        <Route path="/teste2" element={<Teste2 />} />
-      </Routes>
-    </BrowserRouter>
-  );
+        <Navbar />
+          <div className='min-h-[80vh]'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+    </>
+);
 }
-
 export default App;
