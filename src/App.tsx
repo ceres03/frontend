@@ -3,8 +3,8 @@ import Footer from "./components/footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login/Login";
 import Sobre from "./pages/sobre/Sobre";
-import Navbar from "./components/navbar/Navbar";
-import Home from "./pages/home/Home";
+import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
-import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -14,29 +14,29 @@ function Navbar() {
         <div className="">
           <ul className="flex items-center gap-[2vw] mr-3">
             <li>
-              <a href="#" className="nav">
+              <Link to={"/Home"} className="nav">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav">
+              <Link to="/sobre" className="nav">
                 Sobre nós
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav">
+              <Link to="/sobre" className="nav">
                 Contato
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav">
+              <Link to="/login" className="nav">
                 Login
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav">
+              <Link to="" className="nav">
                 Cadastro
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
