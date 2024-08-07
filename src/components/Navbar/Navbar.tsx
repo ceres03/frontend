@@ -1,15 +1,13 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import cereslogo from "../../assets/Ceres1.png";
 
 function Navbar() {
   return (
     <>
       <nav className="bg-gray-900 flex justify-between items-center">
         <div className="w-16">
-          <img
-            src="https://avatars.githubusercontent.com/u/174135955?s=400&u=30f9c39aa29835ef8375bd394132b14d83e6cf6e&v=4"
-            alt="Logotipo"
-          />
+          <img src={cereslogo} alt="Logotipo" />
         </div>
         <div className="">
           <ul className="flex items-center gap-[2vw] mr-3">
@@ -34,7 +32,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="" className="nav">
+              <Link to="/login" className="nav">
                 Cadastro
               </Link>
             </li>
