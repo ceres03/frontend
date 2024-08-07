@@ -1,6 +1,6 @@
-import Teste from "./components/Teste";
-import Teste2 from "./components/Teste2";
 import "./index.css";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
