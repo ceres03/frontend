@@ -32,7 +32,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/login" className="nav">
+              <Link to="/cadastro" className="nav">
                 Cadastro
               </Link>
             </li>
