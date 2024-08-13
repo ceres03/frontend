@@ -18,6 +18,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/Sobre" element={<Sobre />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
         <Footer />

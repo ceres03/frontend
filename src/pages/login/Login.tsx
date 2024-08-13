@@ -1,12 +1,11 @@
 
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import './Login.css';
-
-import { Link, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from '../../../node_modules/react-router-dom/dist/index';
 import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
+import './Login.css';
 import { RotatingLines } from 'react-loader-spinner';
+import { Link } from '@phosphor-icons/react';
 
 function Login() {
     let navigate = useNavigate();
@@ -37,7 +36,7 @@ function Login() {
         handleLogin(usuarioLogin)
     }
 
-    return (
+    return ( 
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
@@ -50,7 +49,7 @@ function Login() {
                             name="usuario"
                             placeholder="Usuario"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={usuarioLogin.usuario}
+                            value={usuarioLogin.email}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
