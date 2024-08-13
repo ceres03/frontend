@@ -6,10 +6,11 @@ import Sobre from "./pages/sobre/Sobre";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Cadastro from "./pages/Cadastro/Cadastro";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <BrowserRouter>
         <Navbar />
         <div className="min-h-[80vh]">
@@ -23,7 +24,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    </>
+    </AuthProvider>
   );
 }
 export default App;
