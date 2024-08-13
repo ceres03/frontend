@@ -1,0 +1,8 @@
+.fundoCadastro {
+    background-image: url("https://i.pinimg.com/originals/79/6e/2b/796e2b98af2bc15982cff4f62bcbde38.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
