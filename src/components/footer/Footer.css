@@ -1,0 +1,10 @@
+#social{
+    transition: all ease 0.5s;
+    
+}
+
+#social:hover {
+    filter: drop-shadow(0 0 10px white);
+    transform: rotate(20deg) ;
+    transition: all ease 1s;
+}

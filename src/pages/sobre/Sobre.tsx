@@ -1,4 +1,4 @@
-import "../Sobre/Sobre.css";
+import "../sobre/Sobre.css";
 
 function Sobre() {
   return (
