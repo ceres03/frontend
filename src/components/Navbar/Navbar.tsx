@@ -2,9 +2,10 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import cereslogo from "../../assets/ceres2.png";
 import { useState } from "react";
+import { Spin as Hamburger } from "hamburger-react";
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <>
@@ -44,15 +45,14 @@ function Navbar() {
             className="py-2 pl-10 rounded-xl border-2 border-blue-300 focus:bg-slate-100 focus:outline-sky-500"
           />
         </div>
-        <i
-          className=" bx bx-menu xl:hidden block text-5xl cursor-pointer"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        ></i>
+        <div className="xl:hidden block text-5xl cursor-pointer">
+          <Hamburger toggled={isOpen} toggle={setOpen} />
+        </div>
         <div
           className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-slate-800 flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
+            isOpen ? "opacity-100" : "opacity-0"
           }`}
-          style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
+          style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}
           <li className="lit">
