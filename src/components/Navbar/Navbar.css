@@ -1,9 +1,6 @@
 .nav {
-  @apply relative ml-10 text-gray-500 font-mono font-bold tracking-[1px] hover:text-white hover:no-underline;
+  @apply p-3 hover:bg-slate-600 hover:text-white rounded-md transition-all cursor-pointer;
 }
-.nav::after {
-  @apply content-[''] bg-white h-[0.3px] w-[0%] left-0 -bottom-[0px] rounded-xl absolute duration-[0.5s];
-}
-.nav:hover::after {
-  @apply w-[100%];
+.lit {
+  @apply w-full text-center p-2 hover:bg-slate-600 rounded-md hover:text-white transition-all cursor-pointer list-none;
 }
