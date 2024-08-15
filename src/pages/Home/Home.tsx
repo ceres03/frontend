@@ -1,7 +1,7 @@
 import React from "react";
 import homevideo from "../../assets/Homevideonew.mp4";
 import logo from "../../assets/logo.png";
-import back from "../../assets/";
+import back from "../../assets/back.png";
 import { motion } from "framer-motion";
 
 function Home() {
