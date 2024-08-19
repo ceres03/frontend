@@ -18,26 +18,35 @@ function Navbar() {
           />
         </Link>
         <ul className="hidden xl:flex items-center gap-12 font-semibold text-base">
-          <li className="nav">
-            <Link to={"/Home"}>Home</Link>
+          <li>
+            <Link className="nav" to={"/Home"}>
+              Home
+            </Link>
           </li>
-          <li className="nav">
-            <Link to="/sobre">Sobre nós</Link>
+          <li>
+            <Link className="nav" to="/sobre">
+              Sobre nós
+            </Link>
           </li>
-          <li className="nav">
-            <Link to="/categorias">Categoria</Link>
+          <li>
+            <Link className="nav" to="/categorias">
+              Categoria
+            </Link>
           </li>
-          <li className="nav">
-            <Link to="/cadastroCategoria">Cadastrar Categoria</Link>
+          <li>
+            <Link className="nav" to="/cadastroCategoria">
+              Cadastrar Categoria
+            </Link>
           </li>
-          <li className="nav">
-            <Link to="/sobre">Contato</Link>
+          <li>
+            <Link className="nav" to="/login">
+              Login
+            </Link>
           </li>
-          <li className="nav">
-            <Link to="/login">Login</Link>
-          </li>
-          <li className="nav">
-            <Link to="/cadastro">Cadastro</Link>
+          <li>
+            <Link className="nav" to="/cadastro">
+              Cadastro
+            </Link>
           </li>
         </ul>
         <div className="relative hidden md:flex items-center justify-center gap-3">
@@ -55,9 +64,8 @@ function Navbar() {
           <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
         <div
-          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-slate-800 flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-slate-800 flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
           style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}
