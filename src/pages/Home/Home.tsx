@@ -1,25 +1,36 @@
 import React from "react";
+import homevideo from "../../assets/Homevideonew.mp4";
+import logo from "../../assets/logo.png";
+import back from "../../assets/back.png";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
     <>
-      <div className="bg-gradient-to-t from-[#a5c0d3] to-[#34546c] flex justify-center h-screen">
-        <div className="container grid grid-cols-1 text-white">
-          <div className="flex flex-col gap-4 items-center justify-center py-4">
-            <h2 className="text-5xl font-bold">HOME</h2>
-
-            <div className="flex justify-around gap-4">
-              <button className="rounded bg-white text-blue-800 py-2 px-4">
-                Ver produtos
-              </button>
-            </div>
-          </div>
-
-          <div className="flex justify-center ">
-            <img src="" alt="" />
-          </div>
+      <section className="relative flex h-screen items-center justify-center">
+        <div className="absolute inset-0 -z-20 h-full w-full overflow-hidden">
+          <video
+            src={homevideo}
+            className="h-full w-full object-cover"
+            muted
+            autoPlay
+            loop
+            playsInline
+            poster={back}
+          ></video>
         </div>
-      </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent from70% to-black"></div>
+        <div className="relative z-20 flex h-fit flex-col justify-end pb-20">
+          <motion.img
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0 }}
+            src={logo}
+            alt="Ceres"
+            className="w-full p-4"
+          />
+        </div>
+      </section>
     </>
   );
 }
