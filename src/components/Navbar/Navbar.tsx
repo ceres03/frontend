@@ -25,6 +25,12 @@ function Navbar() {
             <Link to="/sobre">Sobre nós</Link>
           </li>
           <li className="nav">
+            <Link to="/categorias">Categoria</Link>
+          </li>
+          <li className="nav">
+            <Link to="/cadastroCategoria">Cadastrar Categoria</Link>
+          </li>
+          <li className="nav">
             <Link to="/sobre">Contato</Link>
           </li>
           <li className="nav">
@@ -60,6 +66,12 @@ function Navbar() {
           </li>
           <li className="lit">
             <Link to="/sobre">Sobre nós</Link>
+          </li>
+          <li className="lit">
+            <Link to="/categorias">Categoria</Link>
+          </li>
+          <li className="lit">
+            <Link to="/cadastroCategoria">Cadastrar Categoria</Link>
           </li>
           <li className="lit">
             <Link to="/sobre">Contato</Link>
