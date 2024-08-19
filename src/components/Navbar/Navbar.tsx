@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="flex justify-between items-center text-black py-6 px-8 md:px-32 drop-shadow-md bg-slate-800">
+      <nav className="flex justify-between items-center text-black py-6 px-8 md:px-32 drop-shadow-md bg-[#458406f3]">
         <Link to={"/Home"}>
           <img
             src={cereslogo}
