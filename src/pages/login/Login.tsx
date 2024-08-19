@@ -1,10 +1,9 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
+import { Link, useNavigate } from "../../../node_modules/react-router-dom/dist/index";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
 import { RotatingLines } from "react-loader-spinner";
-import { Link } from "@phosphor-icons/react";
 
 function Login() {
   const navigate = useNavigate();
@@ -91,7 +90,7 @@ function Login() {
           <hr className="border-slate-800 w-full" />
 
           <p>
-            Ainda não tem uma conta?{" "}
+            Ainda não tem uma conta?{' '}
             <Link to="/cadastro" className="text-indigo-800 hover:underline">
               Cadastre-se
             </Link>
