@@ -24,8 +24,8 @@ function Home() {
           </div>
         </div>
         
-        <img src={image1} alt="imagem1" className="absolute z-0 left-[-200px] h-[100%] hover:scale-105 transition-all duration-[0.75s]" />
-        <img src={image2} alt="imagem2" className="absolute z-0 right-[-30px] h-[100%] hover:scale-105 transition-all duration-[0.75s]" />
+        <img src={image1} alt="imagem1" className="absolute z-0 left-[-200px] h-[100%] hover:scale-105 transition-all duration-[0.5s]" />
+        <img src={image2} alt="imagem2" className="absolute z-0 right-[-30px] h-[100%] hover:scale-105 transition-all duration-[0.5s]" />
       </section>
 
       <Sobre />
