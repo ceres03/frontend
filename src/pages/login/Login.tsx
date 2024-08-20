@@ -4,6 +4,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
 import { RotatingLines } from "react-loader-spinner";
+import imageLogin from '../../assets/loginImage.png'
+import logoOfc from '../../assets/logoOfc.png'
 
 function Login() {
   const navigate = useNavigate();
@@ -35,70 +37,44 @@ function Login() {
   }
 
   return (
-    <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-        <form
-          className="flex justify-center items-center flex-col w-1/2 gap-4"
-          onSubmit={login}
-        >
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Email"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.email}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                atualizarEstado(e)
-              }
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                atualizarEstado(e)
-              }
-            />
-          </div>
-          <button
-            type="submit"
-            className="rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center"
-          >
-            {isLoading ? (
-              <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
-                visible={true}
-              />
-            ) : (
-              <span>Entrar</span>
-            )}
-          </button>
-
-          <hr className="border-slate-800 w-full" />
-
-          <p>
-            Ainda não tem uma conta?{' '}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline">
-              Cadastre-se
-            </Link>
-          </p>
+    <div className="flex">
+      <img src={imageLogin} />
+      <div className="flex flex-col w-full items-center pr-20">
+        <img src={logoOfc} className="w-[110px] mt-[132px]" />
+        <p className="mt-[8px] font-semibold text-[48px] text-[#515839]">Boas vindas</p>
+        <p className=" font-normal text-[20px] text-[#515839]">Vamos as compras?</p>
+        <form className="w-[50%] mt-10 flex flex-col" onSubmit={login}>
+          <label className='text-[#515839] font-bold self-start mb-[4px]' htmlFor='email'>E-mail</label>
+          <input className="border-[1px] border-black rounded-[16px] p-2  bg-[#FEFFF9] mb-[24px] h-[50px]"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Insira o email"
+            value={usuarioLogin.email}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          ></input>
+          <label className='text-[#515839] font-bold self-start mb-[4px]' htmlFor='senha'>Senha</label>
+          <input className="border-[1px] border-black rounded-[16px] p-2  bg-[#FEFFF9]  h-[50px]"
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Insira a senha"
+            value={usuarioLogin.senha}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          ></input>
+          <button type='submit' className="border-[1px] border-black rounded-[16px] p-2  bg-[#515839] mt-[48px] h-[50px] font-medium text-white text-[20px] ">Entrar</button>
         </form>
-        <div className="fundoLogin hidden lg:block"></div>
+        <p className="mt-[16px] text-[#515839] font-medium text-[20px]">Esqueci minha senha</p>
+        <div className="flex gap-[4px] mt-32">
+          <p className="font-normal text-[20px]">Não possui uma conta?</p>
+          <Link to='/cadastro' className="font-semibold text-[20px] text-[#515839] hover:underline">
+            Registre-se
+          </Link>
+        </div>
       </div>
-    </>
+
+    </div >
+
   );
 }
 
