@@ -24,6 +24,11 @@ function Navbar() {
             </Link>
           </li>
           <li>
+            <Link to="/produtos" className="hover:underline">
+              Produtos
+            </Link>
+          </li>
+          <li>
             <Link className="nav" to="/sobre">
               Sobre nós
             </Link>
