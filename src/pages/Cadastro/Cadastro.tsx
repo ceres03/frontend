@@ -3,9 +3,13 @@ import './Cadastro.css'
 import { ChangeEvent, useEffect, useState } from 'react'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
+import logoOfc from '../../assets/logoOfc.png'
+import { Bag, CheckCircle, Circle, Storefront, Textbox } from '@phosphor-icons/react'
 function Cadastro() {
 
     let navigate = useNavigate()
+
+    const [tipoUsuario, setTipoUsuario] = useState("");
 
     const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
@@ -69,96 +73,54 @@ function Cadastro() {
     }
 
     return (
-        <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-r from-[#BAA0CD] via-[#BAA0CD] to-gray-300">
-                <div className="fundoCadastro hidden lg:block"></div>
-                <form className='flex justify-center items-center flex-col w-2/3 gap-3 ' onSubmit={cadastrarNovoUsuario}>
-                    <h2 className='text-green-700 text-5xl '>Cadastrar</h2>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="nome">Nome</label>
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuario.nome}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Email</label>
-                        <input
-                            type="text"
-                            id="email"
-                            name="email"
-                            placeholder="Email"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuario.email}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Telefone</label>
-                        <input
-                            type="text"
-                            id="telefone"
-                            name="telefone"
-                            placeholder="Telefone"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuario.telefone}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="foto">Foto</label>
-                        <input
-                            type="text"
-                            id="foto"
-                            name="foto"
-                            placeholder="Foto"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuario.foto}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
-                        <input
-                            type="password"
-                            id="senha"
-                            name="senha"
-                            placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuario.senha}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="confirmarSenha">Confirmar Senha</label>
-                        <input
-                            type="password"
-                            id="confirmarSenha"
-                            name="confirmarSenha"
-                            placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={confirmaSenha}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
-                        />
-                    </div>
-                    <div className="flex justify-around w-full gap-8">
-                        {/* substituir arrow function linha abaixo */}
-                        <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={back}>
-                            Cancelar
-                        </button>
-                        <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2' type='submit'>
-                            Cadastrar
-                        </button>
-                    </div>
-
-                </form>
-            </div >
-        </>
+        <div className='flex flex-col px-64'>
+            <div className='flex justify-center mt-20'>
+                <img src={logoOfc} className='w-[100px]' />
+            </div>
+            <div className='mt-20 w-[75%]'>
+                <p className='text-[#515839] font-bold '>Qual seu objetivo no Ceres?</p>
+                <div className='w-[60%] flex justify-between mt-4'>
+                    <button className={`border-[1px] border-black rounded-[15px]  h-14 w-[45%] flex justify-evenly items-center ${tipoUsuario === "vendedor" ? "bg-[#E5EACB]" : "bg-[white]"}`} onClick={() => { setTipoUsuario("vendedor") }}>
+                        {tipoUsuario === "vendedor" ? <CheckCircle /> : <Circle />}
+                        <p>Quero vender</p>
+                        <Storefront size={32} />
+                    </button>
+                    <button className={`border-[1px] border-black rounded-[15px]  h-14 w-[45%] flex justify-evenly items-center ${tipoUsuario === "comprador" ? "bg-[#E5EACB]" : "bg-white"}`} onClick={() => { setTipoUsuario("comprador") }}>
+                        {tipoUsuario === "comprador" ? <CheckCircle /> : <Circle />}
+                        <p>Quero comprar</p>
+                        <Bag size={32} />
+                    </button>
+                </div>
+            </div>
+            <form className='mt-14  grid grid-flow-col '>
+                <div className='flex flex-col pr-10'>
+                    <label className='text-[#515839] font-bold'>Nome</label>
+                    <input className="border-[1px] border-black rounded-[15px] p-2   bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2" >
+                    </input>
+                    <label className='text-[#515839] font-bold'>Telefone</label>
+                    <input className="border-[1px] border-black rounded-[15px] p-2   bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2" >
+                    </input>
+                    <label className='text-[#515839] font-bold' >Senha</label>
+                    <input className="border-[1px] border-black rounded-[15px] p-2   bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2 " type='password'>
+                    </input>
+                </div>
+                <div className='flex flex-col'>
+                    <label className='text-[#515839] font-bold'>Email</label>
+                    <input className="border-[1px] border-black rounded-[15px] p-2   bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2" >
+                    </input>
+                    <label className='text-[#515839] font-bold'>Foto (Link)</label>
+                    <input className="border-[1px] border-black rounded-[15px] p-2   bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2" >
+                    </input>
+                    <label className='text-[#515839] font-bold'>Confirmar Senha</label>
+                    <input className="border-[1px] border-black rounded-[15px] p-2   bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2" type='password'>
+                    </input>
+                </div>
+            </form>
+            <div className='flex justify-between '>
+                <button className='border-[1px] border-black rounded-[15px] w-[10%] h-11 bg-[#E5EACB] text-[#515839] font-medium'>Cancelar</button>
+                <button className='border-[1px] border-black rounded-[15px] w-[10%] h-11 bg-[#515839] text-[white] font-medium'>Cadastrar</button>
+            </div>
+        </div>
     )
 }
 export default Cadastro
