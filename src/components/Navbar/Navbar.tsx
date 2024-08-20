@@ -24,8 +24,13 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/produtos" className="hover:underline">
+            <Link to="/produtos" className="nav">
               Produtos
+            </Link>
+          </li>
+          <li>
+            <Link to="/cadastroProduto" className="nav">
+              Criar Produto
             </Link>
           </li>
           <li>
@@ -83,6 +88,12 @@ function Navbar() {
           </li>
           <li className="lit">
             <Link to="/sobre">Sobre nós</Link>
+          </li>
+          <li className="lit">
+            <Link to="/produtos">Produtos</Link>
+          </li>
+          <li className="lit">
+            <Link to="/cadastroProduto">Criar Produto</Link>
           </li>
           <li className="lit">
             <Link to="/categorias">Categoria</Link>
