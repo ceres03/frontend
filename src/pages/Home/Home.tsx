@@ -1,5 +1,5 @@
 import homevideo from "../../assets/Homevideonew.mp4";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 import back from "../../assets/back.png";
 import { motion } from "framer-motion";
 import '../sobre/Sobre'
@@ -9,11 +9,12 @@ import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
 import { MapPin } from "@phosphor-icons/react";
 
+
 function Home() {
   return (
     <>
 
-      <section className=" flex h-screen bg-[#fdfff6] ">
+      <section className=" flex h-screen bg-[#fdfff6]">
         
         <div className="flex flex-col m-auto">
           <img src={logoHome} alt="logo oficial" className="flex items-center justify-start m-4 z-10 scale-[500%]"/>
