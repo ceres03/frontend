@@ -18,8 +18,10 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Navbar />
         <div className="min-h-[80vh]">
+          <nav className="fixed top-0 left-0 w-full z-30 bg-transparent">
+            <Navbar />
+          </nav>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
