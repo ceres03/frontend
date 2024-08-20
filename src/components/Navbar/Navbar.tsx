@@ -24,6 +24,11 @@ function Navbar() {
             </Link>
           </li>
           <li>
+            <Link to="/produtos" className="hover:underline">
+              Produtos
+            </Link>
+          </li>
+          <li>
             <Link className="nav" to="/sobre">
               Sobre nós
             </Link>
@@ -64,8 +69,9 @@ function Navbar() {
           <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
         <div
-          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-slate-800 flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isOpen ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-slate-800 flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${
+            isOpen ? "opacity-100" : "opacity-0"
+          }`}
           style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}

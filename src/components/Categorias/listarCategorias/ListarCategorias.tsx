@@ -5,6 +5,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
 import CardCategorias from '../cardCategorias/CardCategorias';
 import Categoria from '../../../models/Categoria';
+import CardProdutos from '../../Produtos/cardProdutos/CardProdutos';
 
 function ListarCategorias() {
 
