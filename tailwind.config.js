@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sansita: ["Sansita", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      fontWeight: {
+        extralight: 200,
       },
     },
   },
