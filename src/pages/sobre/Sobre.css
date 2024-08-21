@@ -1,0 +1,58 @@
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+  }
+  
+  .text-container {
+    flex: 1;
+    margin: 4rem;
+  }
+  
+  .text-container h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #393939;
+    margin-bottom: 1rem;
+  }
+  
+  .text-container p {
+    font-size: 1.2rem;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  .saiba-mais-button {
+    padding: 0px 24px 0px 24px;
+    background-color: #515839;
+    color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .saiba-mais-button:hover {
+    background-color: #3c4f2e;
+  }
+  
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
