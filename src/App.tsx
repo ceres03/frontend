@@ -11,6 +11,7 @@ import ListaProdutos from "./components/Produtos/listarProdutos/ListarProdutos";
 import FormularioProdutos from "./components/Produtos/formularioProdutos/FormularioProdutos";
 import DeletarProdutos from "./components/Produtos/deletarProdutos/DeletarProdutos";
 import Layout from "./components/Layout/Layout";
+import TelaProduto from "./pages/TelaProduto/TelaProduto";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           </Route>
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/telaProduto" element={<TelaProduto />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
