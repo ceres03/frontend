@@ -1,6 +1,6 @@
 .nav {
-  @apply p-3  hover:text-[#f77235] rounded-md transition-all cursor-pointer whitespace-nowrap;
+  @apply pl-3  hover:text-[#f77235] rounded-md transition-all cursor-pointer whitespace-nowrap;
 }
 .lit {
-  @apply w-full text-center p-2 hover:hover:text-[#f77235] rounded-md transition-all cursor-pointer list-none;
+  @apply w-full pl-2 hover:hover:text-[#f77235] rounded-md transition-all cursor-pointer list-none;
 }

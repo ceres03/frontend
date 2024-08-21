@@ -1,25 +1,34 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import cereslogo from "../../assets/ceres2.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import cereslogo from '../../assets/logoOfc.png'
 import { Spin as Hamburger } from "hamburger-react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
 
+
+  const { usuario, handleLogout } = useContext(AuthContext);
+  const email = usuario.email;
+  const admin: boolean = email == 'root@root.com'
+
+
+
+
   return (
     <>
-      <nav className=" flex justify-between items-center text-[#515839] py-6 px-8 md:px-32 drop-shadow-md font-poppins bg-[#ffffff]">
-        <Link to={"/Home"} className="">
+      <nav className=" flex justify-between  text-[#515839] py-6 pl-8 md:pl-32 drop-shadow-md font-sansita bg-[#ffffff] w-full">
+        <Link to={"/"} className="">
           <img
             src={cereslogo}
             alt="Logotipo"
-            className="w-20 h-auto hover:scale-105 transition-all mt-0"
+            className="w-24 hover:scale-105 transition-all justify-self-center"
           />
         </Link>
-        <ul className="hidden xl:flex items-center gap-12 ">
+        <ul className="hidden xl:flex items-center gap-12 font-semibold text-base ml-[3%]">
           <li>
-            <Link className="nav" to={"/Home"}>
+            <Link className="nav" to={"/"}>
               Home
             </Link>
           </li>
@@ -29,25 +38,29 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/cadastroProduto" className="nav">
-              Criar Produto
-            </Link>
-          </li>
-          <li>
-            <a href="#sobre" className="nav">
+            <Link to='/?scrollTo=sobre' className="nav">
               Sobre nós
-            </a>
-          </li>
-          <li>
-            <Link className="nav" to="/categorias">
-              Categoria
             </Link>
           </li>
-          <li>
-            <Link className="nav" to="/cadastroCategoria">
-              Cadastrar Categoria
-            </Link>
-          </li>
+          {admin ?
+            <>
+              <li>
+                <Link to="/cadastroProduto" className="nav">
+                  Criar Produto
+                </Link>
+              </li>
+              <li>
+                <Link className="nav" to="/categorias">
+                  Categoria
+                </Link>
+              </li>
+              <li>
+                <Link className="nav" to="/cadastroCategoria">
+                  Cadastrar Categoria
+                </Link>
+              </li>
+            </>
+            : null}
           <li>
             <Link className="nav" to="/login">
               Login
@@ -84,7 +97,7 @@ function Navbar() {
         >
           {" "}
           <li className="lit">
-            <Link to={"/Home"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="lit">
             <Link to="/sobre">Sobre nós</Link>

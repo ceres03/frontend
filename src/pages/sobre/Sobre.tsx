@@ -1,6 +1,20 @@
+import { useEffect } from "react";
 import "../sobre/Sobre.css";
 
 function Sobre() {
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const scrollTo = queryParams.get('scrollTo');
+
+    if (scrollTo) {
+      const element = document.getElementById(scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="sobre-container" id="sobre">
       <div className="text-container">
