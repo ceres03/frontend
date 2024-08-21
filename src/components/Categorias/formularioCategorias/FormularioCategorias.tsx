@@ -89,12 +89,12 @@ function FormularioCategorias() {
   const carregandoCategoria = categoria.descricao === '';
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
+    <div className=" flex flex-col items-center h-[70vh] pt-[7%] mx-auto">
+      <h1 className="text-4xl text-center my-8 text-[#515839] font-semibold">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
 
       <form onSubmit={gerarNovaCategoria} className="flex flex-col w-1/2 gap-4">
         <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Nome da categoria</label>
+          <label htmlFor="nome" className='text-[#515839] font-medium'>Nome da categoria</label>
           <input
             value={categoria.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -102,11 +102,11 @@ function FormularioCategorias() {
             placeholder="Nome"
             name="nome"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-[1px] border-[#515839] rounded-[16px] p-2 focus:bg-[#fbfdf1] focus:outline-[#515839] transition-all duration-[0.15s] h-[50px]"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição da categoria</label>
+          <label htmlFor="descricao" className='text-[#515839] font-medium'>Descrição da categoria</label>
           <input
             value={categoria.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -114,10 +114,11 @@ function FormularioCategorias() {
             placeholder="Descrição"
             name="descricao"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-[1px] border-[#515839] rounded-[16px] p-2 focus:bg-[#fbfdf1] focus:outline-[#515839] transition-all duration-[0.15s] h-[50px]"
           />
         </div>
-        <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2'>
+        <button disabled={carregandoCategoria} type='submit' className='rounded-[15px] disabled:bg-[#E5EACB] bg-[#C8D198] hover:bg-[#7C8758] text-white font-bold w-1/3 mx-auto block py-2 transition-all duration-[0.15s]'>
+        
           {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
         </button>
       </form>
