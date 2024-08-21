@@ -34,9 +34,9 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link className="nav" to="/sobre">
+            <a href="#sobre" className="nav transition-all duration-[1s]">
               Sobre nós
-            </Link>
+            </a>
           </li>
           <li>
             <Link className="nav" to="/categorias">
@@ -77,9 +77,8 @@ function Navbar() {
           <Hamburger />
         </div>
         <div
-          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
           style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}
