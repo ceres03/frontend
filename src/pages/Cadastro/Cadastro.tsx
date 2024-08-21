@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Cadastro.css'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import Usuario from '../../models/Usuario'
@@ -85,7 +85,9 @@ function Cadastro() {
     return (
         <div className='flex flex-col px-64'>
             <div className='flex justify-center mt-20'>
-                <img src={logoOfc} className='w-[100px]' />
+                <Link to='/home'>
+                    <img src={logoOfc} className='w-[100px] hover:scale-110 transition-all duration-[.5s]' />
+                </Link>
             </div>
             <div className='mt-20 w-[75%]'>
                 <p className='text-[#515839] font-bold '>Qual seu objetivo no Ceres?</p>
