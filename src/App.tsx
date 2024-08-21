@@ -1,6 +1,5 @@
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Sobre from "./pages/sobre/Sobre";
 import Home from "./pages/Home/Home";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -20,7 +19,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/categorias" element={<ListarCategorias />} />
             <Route
               path="/cadastroCategoria"

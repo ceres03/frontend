@@ -18,7 +18,7 @@ function Login() {
 
   useEffect(() => {
     if (usuario.token !== "") {
-      navigate("/home");
+      navigate("/");
     }
   }, [usuario]);
 
@@ -38,7 +38,7 @@ function Login() {
     <div className="flex">
       <img src={imageLogin} className="h-[100vh]" />
       <div className="flex flex-col w-full items-center pr-20">
-        <Link to='/home'>
+        <Link to='/'>
           <img src={logoOfc} className="w-[110px] mt-[132px] hover:scale-110 transition-all duration-[.5s]" />
         </Link>
         <p className="mt-[8px] font-semibold text-[48px] text-[#515839]">Boas vindas</p>

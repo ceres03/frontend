@@ -85,7 +85,7 @@ function Cadastro() {
     return (
         <div className='flex flex-col px-64'>
             <div className='flex justify-center mt-20'>
-                <Link to='/home'>
+                <Link to='/'>
                     <img src={logoOfc} className='w-[100px] hover:scale-110 transition-all duration-[.5s]' />
                 </Link>
             </div>
