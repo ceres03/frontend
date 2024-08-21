@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-      <img src="src/assets/footerImage.svg" alt="" height={780} />
+      <img src="src/assets/footerImage.svg" alt="" height={780} className="w-[100%]"/>
       <div className="flex justify-center bg-[#515839] text-white">
         <div className="container flex flex-col  py-4">
           <img
