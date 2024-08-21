@@ -67,7 +67,7 @@ function Navbar() {
           <input
             type="text"
             placeholder="Pesquisar"
-            className="py-2 pl-10 ml-20 rounded-xl border-2 border-blue-300 focus:bg-slate-100 focus:outline-sky-500"
+            className="py-2 pl-10 ml-20 rounded-xl border-2 border-[#515839] focus:bg-[#e5eacb75] focus:outline-[#515839] transition-all duration-[.15s]"
           />
         </div>
         <div
