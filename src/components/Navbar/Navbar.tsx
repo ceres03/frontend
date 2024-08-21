@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className=" flex justify-between items-center text-[#515839] py-6 px-8 md:px-32 drop-shadow-md font-sansita bg-[#ffffff]">
+      <nav className=" flex justify-between items-center text-[#515839] py-6 px-8 md:px-32 drop-shadow-md font-poppins bg-[#ffffff]">
         <Link to={"/Home"} className="">
           <img
             src={cereslogo}
@@ -17,7 +17,7 @@ function Navbar() {
             className="w-20 h-auto hover:scale-105 transition-all mt-0"
           />
         </Link>
-        <ul className="hidden xl:flex items-center gap-12 font-semibold text-base">
+        <ul className="hidden xl:flex items-center gap-12 ">
           <li>
             <Link className="nav" to={"/Home"}>
               Home
@@ -77,8 +77,9 @@ function Navbar() {
           <Hamburger />
         </div>
         <div
-          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${isOpen ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${
+            isOpen ? "opacity-100" : "opacity-0"
+          }`}
           style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}
