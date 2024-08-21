@@ -67,7 +67,7 @@ function Navbar() {
           <input
             type="text"
             placeholder="Pesquisar"
-            className="py-2 pl-10 ml-20 rounded-xl border-2 border-[#515839] focus:bg-[#f5d4a486] focus:outline-[#515839]"
+            className="py-2 pl-10 ml-20 rounded-xl border-2 border-[#515839] focus:bg-[#e5eacb75] focus:outline-[#515839] transition-all duration-[.15s]"
           />
         </div>
         <div
@@ -77,9 +77,8 @@ function Navbar() {
           <Hamburger />
         </div>
         <div
-          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
           style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}
