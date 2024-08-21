@@ -39,6 +39,11 @@ function Navbar() {
             </a>
           </li>
           <li>
+          <Link to="/parceiros" className="nav">
+               Parceiros  
+          </Link>
+          </li>
+          <li>
             <Link className="nav" to="/categorias">
               Categoria
             </Link>
@@ -87,6 +92,9 @@ function Navbar() {
           </li>
           <li className="lit">
             <Link to="/sobre">Sobre nós</Link>
+          </li>
+          <li className="lit">
+            <Link to="/parceiros">Parceiros</Link>
           </li>
           <li className="lit">
             <Link to="/produtos">Produtos</Link>

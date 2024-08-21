@@ -12,6 +12,8 @@ import ListaProdutos from "./components/Produtos/listarProdutos/ListarProdutos";
 import FormularioProdutos from "./components/Produtos/formularioProdutos/FormularioProdutos";
 import DeletarProdutos from "./components/Produtos/deletarProdutos/DeletarProdutos";
 import Layout from "./components/Layout/Layout";
+import Parceiros from "./pages/parceiros/Parceiros";
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/parceiros" element={<Parceiros />} />
             <Route path="/categorias" element={<ListarCategorias />} />
             <Route
               path="/cadastroCategoria"
