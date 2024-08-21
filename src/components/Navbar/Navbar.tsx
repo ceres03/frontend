@@ -34,7 +34,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="#sobre" className="nav transition-all duration-[1s]">
+            <a href="#sobre" className="nav">
               Sobre nós
             </a>
           </li>
