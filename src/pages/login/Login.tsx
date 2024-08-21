@@ -3,7 +3,6 @@ import { Link, useNavigate } from "../../../node_modules/react-router-dom/dist/i
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
-import { RotatingLines } from "react-loader-spinner";
 import imageLogin from '../../assets/loginImage.png'
 import logoOfc from '../../assets/logoOfc.png'
 
@@ -16,7 +15,6 @@ function Login() {
 
   const { usuario, handleLogin } = useContext(AuthContext);
 
-  const { isLoading } = useContext(AuthContext);
 
   useEffect(() => {
     if (usuario.token !== "") {
@@ -38,9 +36,11 @@ function Login() {
 
   return (
     <div className="flex">
-      <img src={imageLogin} />
+      <img src={imageLogin} className="h-[100vh]" />
       <div className="flex flex-col w-full items-center pr-20">
-        <img src={logoOfc} className="w-[110px] mt-[132px]" />
+        <Link to='/home'>
+          <img src={logoOfc} className="w-[110px] mt-[132px] hover:scale-110 transition-all duration-[.5s]" />
+        </Link>
         <p className="mt-[8px] font-semibold text-[48px] text-[#515839]">Boas vindas</p>
         <p className=" font-normal text-[20px] text-[#515839]">Vamos as compras?</p>
         <form className="w-[50%] mt-10 flex flex-col" onSubmit={login}>
