@@ -5,8 +5,12 @@ import "./MobileMenu.css";
 
 function MobileMenu({
   links,
+  adminLinks,
+  admin,
 }: {
   links: Array<{ name: string; url: string }>;
+  adminLinks: Array<{ name: string; url: string }>;
+  admin: boolean;
 }) {
   const [isOpen, setOpen] = useState(false);
   const [fadeAnimation, setFadeAnimation] = useState(false);
@@ -36,13 +40,23 @@ function MobileMenu({
         } `}
         style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
       >
-        {links.map((link) => (
-          <li>
-            <Link key={link.name} to={link.url}>
-              {link.name}
-            </Link>
-          </li>
-        ))}
+        <div className="w-full container">
+          {links.map((link) => (
+            <li key={link.name}>
+              <Link key={link.name} to={link.url}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+          {admin &&
+            adminLinks.map((link) => (
+              <li key={link.name}>
+                <Link key={link.name} to={link.url}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+        </div>
       </nav>
     </>
   );

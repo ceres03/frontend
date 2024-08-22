@@ -5,7 +5,6 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
 import CardCategorias from "../cardCategorias/CardCategorias";
 import Categoria from "../../../models/Categoria";
-import CardProdutos from "../../Produtos/cardProdutos/CardProdutos";
 
 function ListarCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -43,16 +42,18 @@ function ListarCategorias() {
   return (
     <>
       {categorias.length === 0 && (
-        <ThreeDots
-          visible={true}
-          height="200"
-          width="200"
-          color="#4fa94d"
-          radius="9"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{ justifyContent: "center" }}
-          wrapperClass=""
-        />
+        <div className="flex justify-center items-center h-screen w-full mt-20">
+          <ThreeDots
+            visible={true}
+            height="200"
+            width="200"
+            color="#4fa94d"
+            radius="9"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{ justifyContent: "center" }}
+            wrapperClass=""
+          />
+        </div>
       )}
       <div className="container mx-auto my-4 mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {categorias.map((categoria) => (

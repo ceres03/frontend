@@ -2,10 +2,18 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 import Logo from "../Logo/Logo";
 
-function Menu({ links }: { links: Array<{ name: string; url: string }> }) {
+function Menu({
+  links,
+  adminLinks,
+  admin,
+}: {
+  links: Array<{ name: string; url: string }>;
+  adminLinks: Array<{ name: string; url: string }>;
+  admin: boolean;
+}) {
   return (
     <>
-      <Link to={"/Home"}>
+      <Link to={"/"}>
         <div className="hover:scale-105 transition-all pb-4">
           <Logo height={36} width={102} color="#515839" />
         </div>
@@ -23,6 +31,14 @@ function Menu({ links }: { links: Array<{ name: string; url: string }> }) {
             </Link>
           </li>
         ))}
+        {admin &&
+          adminLinks.map((link) => (
+            <li key={link.name}>
+              <Link to={link.url} className="nav p-4">
+                {link.name}
+              </Link>
+            </li>
+          ))}
       </ul>
       {/* <SearchBar /> */}
     </>

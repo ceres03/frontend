@@ -13,9 +13,9 @@ function Footer() {
         src="src/assets/footerImage.svg"
         alt=""
         height={780}
-        className="w-[100%]"
+        className="w-full max-w-screen-2xl mx-auto"
       />
-      <div className="flex justify-center bg-[#515839] text-white">
+      <div className="flex justify-center bg-[#515839] text-white max-w-screen-2xl mx-auto">
         <div className="container flex flex-col p-4">
           <img
             src="src/assets/sarah-logo.svg"
@@ -32,8 +32,13 @@ function Footer() {
             <FacebookLogo size={48} weight="bold" id="social" />
           </div>
           <div className="flex gap-2 mt-10 mb-8">
-            <Link to="/legal">Informações legais</Link> •{" "}
-            <Link to="politics">Política de privacidade</Link>
+            <Link to="/legal" className="hover:underline">
+              Informações legais
+            </Link>{" "}
+            •{" "}
+            <Link to="politics" className="hover:underline">
+              Política de privacidade
+            </Link>
           </div>
         </div>
       </div>

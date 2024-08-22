@@ -4,20 +4,8 @@ const links = [
     url: "/produtos",
   },
   {
-    name: "Criar Produto",
-    url: "/cadastroProduto",
-  },
-  {
     name: "Sobre nós",
-    url: "/sobre",
-  },
-  {
-    name: "Categoria",
-    url: "/categorias",
-  },
-  {
-    name: "Cadastrar Categoria",
-    url: "/cadastroCategoria",
+    url: "/?scrollTo=sobre",
   },
   {
     name: "Login",
@@ -29,4 +17,19 @@ const links = [
   },
 ];
 
-export default links;
+const adminLinks = [
+  {
+    name: "Criar Produto",
+    url: "/cadastroProduto",
+  },
+  {
+    name: "Categoria",
+    url: "/categorias",
+  },
+  {
+    name: "Cadastrar Categoria",
+    url: "/cadastroCategoria",
+  },
+];
+
+export { links, adminLinks };
