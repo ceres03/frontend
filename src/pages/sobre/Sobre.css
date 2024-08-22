@@ -47,6 +47,7 @@
   
   .saiba-mais-button:hover {
     background-color: #3c4f2e;
+    transition: all ease 0.5s;
   }
   
   .image-container {

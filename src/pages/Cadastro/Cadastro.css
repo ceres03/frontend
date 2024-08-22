@@ -8,9 +8,9 @@
 }
 
 .cadastro input {
-  @apply border-[1px] border-black rounded-xl py-3 px-4 bg-[#fefff9] hover:bg-[#f2f5e1] focus:bg-[#f2f5e1] mb-8 mt-2;
+  @apply border-[1px] border-black rounded-xl py-3 px-4 bg-[#fefff9] hover:bg-[#f2f5e1] transition-all duration-[0.35s] focus:bg-[#f2f5e1] mb-8 mt-2;
 }
 
 .cadastro button {
-  @apply flex items-center border-[1px] border-black rounded-[15px] h-11 py-4 px-8 font-medium;
+  @apply flex items-center border-[1px] border-[#515839] rounded-[15px] h-11 py-4 px-8 font-medium;
 }
