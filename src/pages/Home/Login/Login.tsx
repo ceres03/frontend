@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import React from "react";
 
 const Login = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg-gradient-to-t from-[#a5c0d3] to-[#34546c] h-screen m-0">

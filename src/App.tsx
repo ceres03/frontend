@@ -11,7 +11,9 @@ import ListaProdutos from "./components/Produtos/listarProdutos/ListarProdutos";
 import FormularioProdutos from "./components/Produtos/formularioProdutos/FormularioProdutos";
 import DeletarProdutos from "./components/Produtos/deletarProdutos/DeletarProdutos";
 import Layout from "./components/Layout/Layout";
+import Parceiros from "./pages/parceiros/Parceiros";
 import TelaProduto from "./pages/TelaProduto/TelaProduto";
+
 
 function App() {
   return (
@@ -20,25 +22,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/parceiros" element={<Parceiros />} />
             <Route path="/categorias" element={<ListarCategorias />} />
-            <Route
-              path="/cadastroCategoria"
-              element={<FormularioCategorias />}
-            />
-            <Route
-              path="/editarCategoria/:id"
-              element={<FormularioCategorias />}
-            />
-            <Route
-              path="/deletarCategoria/:id"
-              element={<DeletarCategorias />}
-            />
-            <Route path="/produtos" element={<ListaProdutos />} />
-            <Route path="/cadastroProduto" element={<FormularioProdutos />} />
-            <Route
-              path="/editarProdutos/:id"
-              element={<FormularioProdutos />}
-            />
+            <Route path="/cadastroCategoria" element={<FormularioCategorias />}/>
+            <Route path="/editarCategoria/:id" element={<FormularioCategorias />}/>
+            <Route path="/deletarCategoria/:id" element={<DeletarCategorias />}/>
+            <Route path="/produtos" element={<ListaProdutos />}/>
+            <Route path="/cadastroProduto" element={<FormularioProdutos />}/>
+            <Route path="/editarProdutos/:id" element={<FormularioProdutos />}/>
             <Route path="/deletarProdutos/:id" element={<DeletarProdutos />} />
           </Route>
           <Route path="/cadastro" element={<Cadastro />} />

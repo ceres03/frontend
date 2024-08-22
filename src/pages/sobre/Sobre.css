@@ -1,12 +1,17 @@
+
 .sobre-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #ffffff;
+
+  border-radius: 42px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+  height: 80vh;
+  margin-top: 5rem
+}
+
   
   .text-container {
     flex: 1;
@@ -17,18 +22,18 @@
     font-size: 48px;
     font-weight: 700;
     color: #393939;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .text-container p {
     font-size: 1.2rem;
     color: #666666;
-    line-height: 1.5;
-    margin-bottom: 2rem;
+    line-height: 1.7;
+    margin-bottom: 10rem;
   }
   
   .saiba-mais-button {
-    padding: 0px 24px 0px 24px;
+    padding: 6px 24px 6px 24px;
     background-color: #515839;
     color: #ffffff;
     border: none;
@@ -45,7 +50,7 @@
   }
   
   .image-container {
-    flex: 1;
+    flex: 1.5;
     display: flex;
     justify-content: center;
   }

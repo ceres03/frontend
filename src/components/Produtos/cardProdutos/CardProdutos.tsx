@@ -1,35 +1,35 @@
 import { Link } from 'react-router-dom';
 import Produto from '../../../models/Produto';
+import "../cardProdutos/CardProdutos.css"
 
 
 function CardProdutos(post: Produto) {
     return (
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between w-80'>
-            <div>
-                <div className="flex flex-col items-center bg-gray-100">
-                    <img
-                        src={post.imagem}
-                        className='w-full h-48 object-cover rounded'
-                        alt={post.nome}
-                    />
-                    <h2 className='text-2xl font-bold mt-2'>{post.nome}</h2>
+        <div className="border flex flex-col rounded-2xl overflow-hidden justify-between mb-8">
+            <div className='flex-shrink-0 h-1,5/3'>
+                <img
+                    src={post.imagem}
+                    className='w-full h-full object-cover'
+                    alt={post.nome}
+                />
+            </div>
+            <div className='flex-1 p-4 flex flex-col justify-between'>
+                <div>
+                    <h2 className='text-2xl font-bold mb-2'>{post.nome}</h2>
+                    <p className='text-lg font-semibold mb-2'>{post.descricao}</p>
+                    <p className='text-lg font-semibold mb-4'>{post.preco}</p>
                 </div>
-
-                <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-                    <img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />
-                    <h3 className='text-lg font-bold text-center uppercase '>{post.usuario?.nome}</h3>
-                </div>
-                <div className="flex">
-                    <Link to={`/editarProdutos/${post.id}`} className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
-                        <button>Editar</button>
-                    </Link>
-                    <Link to={`/deletarProdutos/${post.id}`} className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-                        <button>Deletar</button>
-                    </Link>
-                </div>
+                <div></div>
+            </div>
+            <div className="button-container">
+                <Link to={`/editarProdutos/${post.id}`}>
+                    <button className="btn btn-2 btn-sep icon-cart">Editar</button>
+                </Link>
+                <Link to={`/deletarProdutos/${post.id}`}>
+                    <button className="btn btn-3 btn-sep icon-trash">Deletar</button>
+                </Link>
             </div>
         </div>
-
     );
 }
 

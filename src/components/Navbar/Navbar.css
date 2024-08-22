@@ -1,6 +1,3 @@
-.nav {
-  @apply pl-3  hover:text-[#f77235] rounded-md transition-all cursor-pointer whitespace-nowrap;
-}
-.lit {
-  @apply w-full pl-2 hover:hover:text-[#f77235] rounded-md transition-all cursor-pointer list-none;
+.navbar {
+  @apply h-24 container mx-auto flex justify-between items-center;
 }
