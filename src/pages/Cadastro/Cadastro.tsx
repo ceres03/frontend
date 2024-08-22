@@ -5,6 +5,7 @@ import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import logoOfc from "../../assets/logoOfc.png";
 import { Bag, CheckCircle, Circle, Storefront } from "@phosphor-icons/react";
+import { toastAlerta } from "../../utils/toastAlerta";
 function Cadastro() {
   const navigate = useNavigate();
 
@@ -70,19 +71,22 @@ function Cadastro() {
           usuario,
           setUsuarioResposta
         );
-        alert("Usuário cadastrado com sucesso");
+        toastAlerta("Usuário cadastrado com sucesso", "sucesso");
       } catch (error) {
-        alert("Erro ao cadastrar o Usuário");
+        toastAlerta("Erro ao cadastrar o Usuário", "erro");
       }
     } else {
-      alert("Dados inconsistentes. Verifique as informações de cadastro.");
+      toastAlerta(
+        "Dados inconsistentes. Verifique as informações de cadastro.",
+        "info"
+      );
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
   }
 
   return (
-    <div className="flex flex-col sm:h-screen container mx-auto p-4 cadastro">
+    <div className="flex flex-col sm:h-screen container mx-auto p-4 cadastro justify-center">
       <div className="flex justify-center mt-4">
         <Link to="/">
           <img
@@ -97,7 +101,7 @@ function Cadastro() {
         </p>
         <div className="flex flex-col justify-center items-center sm:justify-start sm:items-start sm:flex-row mt-4 gap-4">
           <button
-            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center ${
+            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center hover:bg-[#E5EACB] transition-all duration-[.5s] ${
               tipoUsuario === "vendedor" ? "bg-[#E5EACB]" : "bg-[white]"
             }`}
             onClick={() => {
@@ -109,7 +113,7 @@ function Cadastro() {
             <Storefront size={32} />
           </button>
           <button
-            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center ${
+            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center hover:bg-[#E5EACB] transition-all duration-[.5s] ${
               tipoUsuario === "comprador" ? "bg-[#E5EACB]" : "bg-white"
             }`}
             onClick={() => {

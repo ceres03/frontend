@@ -1,5 +1,8 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "../../../node_modules/react-router-dom/dist/index";
+import {
+  Link,
+  useNavigate,
+} from "../../../node_modules/react-router-dom/dist/index";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
@@ -34,9 +37,9 @@ function Login() {
   }
 
   return (
-    <div className="flex h-[100vh] max-w-screen-2xl mx-auto">
-      <img src={imageLogin} className="h-full hidden md:flex" />
-      <div className="flex justify-center items-center flex-col w-full">
+    <div className="flex h-[100vh] max-w-[1920px] mx-auto">
+      <img src={imageLogin} className="h-full hidden lg:flex" />
+      <div className="flex justify-center items-center flex-col w-full ">
         <Link to="/">
           <img
             src={logoOfc}
@@ -54,13 +57,13 @@ function Login() {
           onSubmit={login}
         >
           <label
-            className="text-[#515839] font-bold self-start mb-[4px]"
+            className="text-[#515839] font-bold self-start mb-[4px] "
             htmlFor="email"
           >
             E-mail
           </label>
           <input
-            className="border-[1px] border-black rounded-[16px] p-2  bg-[#FEFFF9] mb-[24px] h-[50px] w-full"
+            className="border-[1px] border-black rounded-[16px] p-2  bg-[#FEFFF9] mb-[24px] h-[50px] w-full focus:bg-[#f2f5e1] hover:bg-[#f2f5e1] transition-all duration-[0.35s]"
             type="text"
             id="email"
             name="email"
@@ -69,13 +72,13 @@ function Login() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           ></input>
           <label
-            className="text-[#515839] font-bold self-start mb-[4px]"
+            className="text-[#515839] font-bold self-start mb-[4px] "
             htmlFor="senha"
           >
             Senha
           </label>
           <input
-            className="border-[1px] border-black rounded-[16px] p-2  bg-[#FEFFF9]  h-[50px]"
+            className="border-[1px] border-black rounded-[16px] p-2  bg-[#FEFFF9]  h-[50px] focus:bg-[#f2f5e1] hover:bg-[#f2f5e1] transition-all duration-[0.35s] "
             type="password"
             id="senha"
             name="senha"
@@ -85,14 +88,14 @@ function Login() {
           ></input>
           <button
             type="submit"
-            className="border-[1px] border-black rounded-[16px] p-2  bg-[#515839] mt-[48px] h-[50px] font-medium text-white text-[20px] "
+            className="border-[1px] border-[#515839] rounded-[16px] p-2  bg-[#C8D198] mt-[48px] h-[50px] font-medium text-white text-[20px] hover:scale-[1.01] transition-all duration-[0.5s] hover:bg-[#515839]"
           >
             Entrar
           </button>
         </form>
-        <p className="mt-[16px] text-[#515839] font-medium text-[20px]">
+        <a className="mt-[16px] text-[#515839] font-medium text-[20px] hover:underline">
           Esqueci minha senha
-        </p>
+        </a>
         <div className="flex gap-[4px] mt-20">
           <p className="font-normal text-[20px]">Não possui uma conta?</p>
           <Link

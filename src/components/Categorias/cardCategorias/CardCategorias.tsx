@@ -3,6 +3,7 @@ import Categoria from "../../../models/Categoria";
 import "../cardCategorias/cardCategoria.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
+import orangespng from '../../../assets/oranges.png'
 
 interface CardCategoriaProps {
   categoria: Categoria;
@@ -17,7 +18,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
 
   return (
     <div className="border flex flex-col rounded-2xl overflow-hidden justify-between mb-8">
-      <img src="/src/assets/oranges.png" alt="" className="w-full" />
+      <img src= {orangespng} alt="" className="w-full" />
       <h2 className="py-6 px-6 text-[#515839] font-bold text-2xl">
         {categoria.nome}
       </h2>

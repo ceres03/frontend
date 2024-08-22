@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar, deletar } from "../../../services/Service"
 import Categoria from "../../../models/Categoria"
+import { toastAlerta } from "../../../utils/toastAlerta"
 
 
 
@@ -29,7 +30,7 @@ function DeletarCategorias() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                toastAlerta('O token expirou, favor logar novamente', 'erro')
                 handleLogout()
             }
         }
@@ -37,7 +38,7 @@ function DeletarCategorias() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('Você precisa estar logado', 'info')
             navigate('/login')
         }
     }, [token])
@@ -60,10 +61,10 @@ function DeletarCategorias() {
                 }
             })
 
-            alert('Categoria apagada com sucesso')
+            toastAlerta('Categoria apagada com sucesso', 'sucesso')
 
         } catch (error) {
-            alert('Erro ao apagar a Categoria')
+            toastAlerta('Erro ao apagar a Categoria', 'erro')
         }
 
         retornar()
