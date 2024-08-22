@@ -1,4 +1,6 @@
 import "./Footer.css";
+import footerpng from  '../../assets/footerImage.svg'
+import sarahlogo from "../../assets/sarah-logo.svg"
 import {
   FacebookLogo,
   InstagramLogo,
@@ -10,7 +12,7 @@ function Footer() {
   return (
     <>
       <img
-        src="src/assets/footerImage.svg"
+        src= {footerpng}
         alt=""
         height={780}
         className="w-full max-w-screen-2xl mx-auto"
@@ -18,7 +20,7 @@ function Footer() {
       <div className="flex justify-center bg-[#515839] text-white max-w-screen-2xl mx-auto">
         <div className="container flex flex-col p-4">
           <img
-            src="src/assets/sarah-logo.svg"
+            src= {sarahlogo}
             alt="Ceres"
             height={75}
             width={212.5}
