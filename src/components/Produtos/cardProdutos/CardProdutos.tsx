@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import Produto from '../../../models/Produto';
 import "../cardProdutos/CardProdutos.css"
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
 import { Handbag } from '@phosphor-icons/react';
 
-
 function CardProdutos(produto: Produto) {
+
+    const { usuario } = useContext(AuthContext);
+    const email = usuario.email;
+    const admin: boolean = email == "root@root.com";
+  
     return (
         <div className="border flex flex-col rounded-2xl overflow-hidden justify-between mb-8 relative hover:scale-[1.01] transition-all duration-[.5s]">
             <Link to={`/telaProduto/${produto.id}`}>
@@ -26,14 +32,16 @@ function CardProdutos(produto: Produto) {
                     <p className='text-lg font-semibold mb-4'>{produto.preco}</p>
                 </div>
             </div>
-            <div className="button-container">
-                <Link to={`/editarProdutos/${produto.id}`}>
-                    <button className="btn btn-2 btn-sep icon-cart">Editar</button>
-                </Link>
-                <Link to={`/deletarProdutos/${produto.id}`}>
-                    <button className="btn btn-3 btn-sep icon-trash">Deletar</button>
-                </Link>
-            </div>
+            {admin && (
+                <div className="button-container">
+                    <Link to={`/editarProdutos/${post.id}`}>
+                        <button className="btn btn-2 btn-sep icon-cart">Editar</button>
+                    </Link>
+                    <Link to={`/deletarProdutos/${post.id}`}>
+                        <button className="btn btn-3 btn-sep icon-trash">Deletar</button>
+                    </Link>
+                </div>
+            )}
         </div>
 
     );
