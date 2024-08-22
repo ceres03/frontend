@@ -1,5 +1,8 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "../../../node_modules/react-router-dom/dist/index";
+import {
+  Link,
+  useNavigate,
+} from "../../../node_modules/react-router-dom/dist/index";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
@@ -34,8 +37,8 @@ function Login() {
   }
 
   return (
-    <div className="flex h-[100vh] max-w-screen-2xl mx-auto">
-      <img src={imageLogin} className="h-full hidden md:flex" />
+    <div className="flex h-[100vh] max-w-[1920px] mx-auto">
+      <img src={imageLogin} className="h-full hidden lg:flex" />
       <div className="flex justify-center items-center flex-col w-full ">
         <Link to="/">
           <img
