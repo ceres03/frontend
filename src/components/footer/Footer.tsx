@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 import {
   FacebookLogo,
@@ -10,15 +9,20 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-      <img src="src/assets/footerImage.svg" alt="" height={780} className="w-[100%]"/>
+      <img
+        src="src/assets/footerImage.svg"
+        alt=""
+        height={780}
+        className="w-[100%]"
+      />
       <div className="flex justify-center bg-[#515839] text-white">
-        <div className="container flex flex-col  py-4">
+        <div className="container flex flex-col p-4">
           <img
-            src="src/assets/logoHome.svg"
-            alt=""
+            src="src/assets/sarah-logo.svg"
+            alt="Ceres"
             height={75}
             width={212.5}
-            className="-ml-[35px] -mb-[8px]"
+            className="py-4"
           />
           <p className="text-lg">Acesse nossas redes sociais</p>
           <p className="text-sm">Copyright © 2024 Ceres</p>
