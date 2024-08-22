@@ -4,6 +4,11 @@
 
 html,
 body {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --swiper-theme-color: "#515839";
+  --swiper-navigation-color: "#515839";
 }
