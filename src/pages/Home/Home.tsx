@@ -4,10 +4,9 @@ import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
 import { MapPin } from "@phosphor-icons/react";
 import Logo from "../../components/Logo/Logo";
+import CarrouselCategorias from "../../components/CarrouselCategorias/CarrouselCategorias";
 
 function Home() {
-
-
   return (
     <>
       <section className="h-screen w-screen flex flex-col justify-center items-center mt-20 gap-20 max-w-screen-2xl mx-auto">
@@ -32,6 +31,8 @@ function Home() {
           className="absolute top-0 right-[-150px] md:right-[-100px] lg:right-[-50px] z-0 hover:scale-105 transition-all duration-[0.5s] h-screen opacity-40 lg:opacity-100"
         />
       </section>
+
+      <CarrouselCategorias />
 
       <Sobre />
     </>

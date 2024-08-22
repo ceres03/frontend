@@ -1,0 +1,23 @@
+:root {
+  --swiper-navigation-color: "#515839";
+  --swiper-navigation-top-offset: 90%;
+  --swiper-navigation-sides-offset: 0px;
+  --swiper-navigation-size: 20px;
+}
+
+.swiper-wrapper {
+  @apply pb-16;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply !text-white bg-[#515839] rounded-full p-6;
+}
+
+.swiper-button-prev::after {
+  font-size: 20px !important;
+}
+
+.swiper-button-next::after {
+  font-size: 20px !important;
+}
