@@ -5,8 +5,29 @@ import image2 from "../../assets/image2.png";
 import { MapPin } from "@phosphor-icons/react";
 import Logo from "../../components/Logo/Logo";
 import CarrouselCategorias from "../../components/CarrouselCategorias/CarrouselCategorias";
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 function Home() {
+
+  const { search } = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const scrollTo = params.get('scrollTo');
+  
+    if (scrollTo === 'sobre') {
+      const sobreSection = document.getElementById('sobre-section');
+      if (sobreSection) {
+        sobreSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (scrollTo === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [search]);
+
+
   return (
     <>
       <section className="h-screen w-screen flex flex-col justify-center items-center mt-20 gap-20 max-w-screen-2xl mx-auto">
@@ -31,10 +52,11 @@ function Home() {
           className="absolute top-0 right-[-150px] md:right-[-100px] lg:right-[-50px] z-0 hover:scale-105 transition-all duration-[0.5s] h-screen opacity-40 lg:opacity-100"
         />
       </section>
-
+      <section id="sobre-section">
+        <Sobre />
+      </section>
       <CarrouselCategorias />
 
-      <Sobre />
     </>
   );
 }

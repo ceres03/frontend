@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
+
   const { usuario } = useContext(AuthContext);
   const email = usuario.email;
   const admin: boolean = email == "root@root.com";
