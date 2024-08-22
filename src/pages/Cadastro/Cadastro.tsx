@@ -96,7 +96,7 @@ function Cadastro() {
         </Link>
       </div>
       <div className="mt-10">
-        <p className="text-[#515839] font-bold text-center sm:text-start">
+        <p className="text-[#515839] font-bold first-letter:text-center sm:text-start">
           Qual seu objetivo no Ceres?
         </p>
         <div className="flex flex-col justify-center items-center sm:justify-start sm:items-start sm:flex-row mt-4 gap-4">
