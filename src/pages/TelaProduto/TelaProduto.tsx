@@ -1,8 +1,6 @@
-import React from 'react'
 
 import logo from '../../assets/oranges.png'
-import Usuario from '../../models/Usuario'
-import { Bag, Star } from '@phosphor-icons/react'
+import { Bag } from '@phosphor-icons/react'
 
 function TelaProduto() {
     return (

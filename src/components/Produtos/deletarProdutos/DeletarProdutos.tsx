@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Produto from '../../../models/Produto'
 import { buscar, deletar } from '../../../services/Service'
@@ -62,8 +62,8 @@ function DeletarProdutos() {
 
         retornar()
     }
-  return (
-    <div className='container w-1/3 mx-auto'>
+    return (
+        <div className='container w-1/3 mx-auto'>
             <h1 className='text-4xl text-center my-4'>Deletar produto</h1>
 
             <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar o produto a seguir?</p>
@@ -79,7 +79,7 @@ function DeletarProdutos() {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default DeletarProdutos
