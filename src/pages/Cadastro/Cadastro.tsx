@@ -98,7 +98,7 @@ function Cadastro() {
         </p>
         <div className="flex flex-col justify-center items-center sm:justify-start sm:items-start sm:flex-row mt-4 gap-4">
           <button
-            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center ${
+            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center hover:bg-[#E5EACB] transition-all duration-[.5s] ${
               tipoUsuario === "vendedor" ? "bg-[#E5EACB]" : "bg-[white]"
             }`}
             onClick={() => {
@@ -110,7 +110,7 @@ function Cadastro() {
             <Storefront size={32} />
           </button>
           <button
-            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center ${
+            className={`border-[1px] border-black rounded-md w-[265px] flex justify-evenly items-center hover:bg-[#E5EACB] transition-all duration-[.5s] ${
               tipoUsuario === "comprador" ? "bg-[#E5EACB]" : "bg-white"
             }`}
             onClick={() => {
