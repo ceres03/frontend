@@ -76,14 +76,17 @@ function Cadastro() {
         toastAlerta("Erro ao cadastrar o Usuário", "erro");
       }
     } else {
-      toastAlerta("Dados inconsistentes. Verifique as informações de cadastro.", "info");
+      toastAlerta(
+        "Dados inconsistentes. Verifique as informações de cadastro.",
+        "info"
+      );
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
   }
 
   return (
-    <div className="flex flex-col sm:h-screen container mx-auto p-4 cadastro">
+    <div className="flex flex-col sm:h-screen container mx-auto p-4 cadastro justify-center">
       <div className="flex justify-center mt-4">
         <Link to="/">
           <img

@@ -1,4 +1,3 @@
-
 import "./CarrouselCategorias.css";
 
 // import Swiper core and required modules
@@ -15,7 +14,7 @@ import CardCategorias from "../Categorias/cardCategorias/CardCategorias";
 import { buscar } from "../../services/Service";
 import { useEffect, useState } from "react";
 import Categoria from "../../models/Categoria";
-import marketCart from '../../assets/outlineKart.svg';
+import marketCart from "../../assets/outlineKart.svg";
 import { toastAlerta } from "../../utils/toastAlerta";
 
 function CarrouselCategorias() {
@@ -58,6 +57,7 @@ function CarrouselCategorias() {
               navigation
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
+              className="w-full"
             >
               {categorias.map((categoria, index) => (
                 <SwiperSlide key={index}>
@@ -72,4 +72,3 @@ function CarrouselCategorias() {
   );
 }
 export default CarrouselCategorias;
-
