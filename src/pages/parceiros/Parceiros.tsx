@@ -1,5 +1,5 @@
 import "../parceiros/Parceiros.css";
-import parceiros from "src/assets/parceiros.png"
+import parceiros from "../../assets/parceiros.png"
 
 function Parceiros() {
   return (
