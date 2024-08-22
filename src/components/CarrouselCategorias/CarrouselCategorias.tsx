@@ -15,6 +15,7 @@ import { buscar } from "../../services/Service";
 import { useEffect, useState } from "react";
 import Categoria from "../../models/Categoria";
 import marketCart from '../../assets/outlineKart.svg';
+import { toastAlerta } from "../../utils/toastAlerta";
 
 function CarrouselCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -26,7 +27,7 @@ function CarrouselCategorias() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        alert("O token expirou, favor logar novamente");
+        toastAlerta("O token expirou, favor logar novamente", "erro");
       }
     }
   }

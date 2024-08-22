@@ -13,11 +13,14 @@ import DeletarProdutos from "./components/Produtos/deletarProdutos/DeletarProdut
 import Layout from "./components/Layout/Layout";
 import Parceiros from "./pages/parceiros/Parceiros";
 import TelaProduto from "./pages/TelaProduto/TelaProduto";
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
