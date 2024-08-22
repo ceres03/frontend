@@ -13,28 +13,31 @@ import DeletarProdutos from "./components/Produtos/deletarProdutos/DeletarProdut
 import Layout from "./components/Layout/Layout";
 import Parceiros from "./pages/parceiros/Parceiros";
 import TelaProduto from "./pages/TelaProduto/TelaProduto";
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/parceiros" element={<Parceiros />} />
             <Route path="/categorias" element={<ListarCategorias />} />
-            <Route path="/cadastroCategoria" element={<FormularioCategorias />}/>
-            <Route path="/editarCategoria/:id" element={<FormularioCategorias />}/>
-            <Route path="/deletarCategoria/:id" element={<DeletarCategorias />}/>
-            <Route path="/produtos" element={<ListaProdutos />}/>
-            <Route path="/cadastroProduto" element={<FormularioProdutos />}/>
-            <Route path="/editarProdutos/:id" element={<FormularioProdutos />}/>
+            <Route path="/cadastroCategoria" element={<FormularioCategorias />} />
+            <Route path="/editarCategoria/:id" element={<FormularioCategorias />} />
+            <Route path="/deletarCategoria/:id" element={<DeletarCategorias />} />
+            <Route path="/produtos" element={<ListaProdutos />} />
+            <Route path="/cadastroProduto" element={<FormularioProdutos />} />
+            <Route path="/editarProdutos/:id" element={<FormularioProdutos />} />
             <Route path="/deletarProdutos/:id" element={<DeletarProdutos />} />
           </Route>
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/telaProduto" element={<TelaProduto />} />
+          <Route path="/telaProduto/:id" element={<TelaProduto />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

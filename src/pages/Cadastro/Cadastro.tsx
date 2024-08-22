@@ -5,6 +5,7 @@ import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import logoOfc from "../../assets/logoOfc.png";
 import { Bag, CheckCircle, Circle, Storefront } from "@phosphor-icons/react";
+import { toastAlerta } from "../../utils/toastAlerta";
 function Cadastro() {
   const navigate = useNavigate();
 
@@ -70,12 +71,12 @@ function Cadastro() {
           usuario,
           setUsuarioResposta
         );
-        alert("Usuário cadastrado com sucesso");
+        toastAlerta("Usuário cadastrado com sucesso", "sucesso");
       } catch (error) {
-        alert("Erro ao cadastrar o Usuário");
+        toastAlerta("Erro ao cadastrar o Usuário", "erro");
       }
     } else {
-      alert("Dados inconsistentes. Verifique as informações de cadastro.");
+      toastAlerta("Dados inconsistentes. Verifique as informações de cadastro.", "info");
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }

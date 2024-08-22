@@ -1,4 +1,3 @@
-
 import logo from '../../assets/oranges.png'
 import { Bag } from '@phosphor-icons/react'
 
@@ -47,5 +46,4 @@ function TelaProduto() {
         </div>
     )
 }
-
 export default TelaProduto

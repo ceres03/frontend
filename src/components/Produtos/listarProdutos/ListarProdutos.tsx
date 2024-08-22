@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
@@ -77,4 +76,3 @@ function ListaProdutos() {
 }
 
 export default ListaProdutos;
-
