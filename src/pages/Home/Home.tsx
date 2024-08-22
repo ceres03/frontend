@@ -6,6 +6,8 @@ import { MapPin } from "@phosphor-icons/react";
 import Logo from "../../components/Logo/Logo";
 
 function Home() {
+
+
   return (
     <>
       <section className="h-screen w-screen flex flex-col justify-center items-center mt-20 gap-20 max-w-screen-2xl mx-auto">

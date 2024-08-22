@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "../sobre/Sobre.css";
 
 function Sobre() {
+  
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const scrollTo = queryParams.get("scrollTo");

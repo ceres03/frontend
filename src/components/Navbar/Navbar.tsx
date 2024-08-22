@@ -1,4 +1,3 @@
-import "./Navbar.css";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { links, adminLinks } from "../../consts/links";
 import Menu from "../Menu/Menu";
@@ -10,6 +9,10 @@ function Navbar() {
   const { usuario } = useContext(AuthContext);
   const email = usuario.email;
   const admin: boolean = email == "root@root.com";
+
+  const { usuario, handleLogout } = useContext(AuthContext);
+  const email = usuario.email;
+  const admin: boolean = email == 'root@root.com'
 
   return (
     <div className="relative bg-white drop-shadow-md">
