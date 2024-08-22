@@ -1,3 +1,4 @@
+
 import "./CarrouselCategorias.css";
 
 // import Swiper core and required modules
@@ -71,3 +72,4 @@ function CarrouselCategorias() {
   );
 }
 export default CarrouselCategorias;
+

@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +5,6 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import CardProduto from "../cardProdutos/CardProdutos";
-import { toastAlerta } from "../../../utils/toastAlerta";
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -18,7 +16,7 @@ function ListaProdutos() {
 
   useEffect(() => {
     if (token === "") {
-      toastAlerta("Você precisa estar logado", "info");
+      alert("Você precisa estar logado");
       navigate("/");
     }
   }, [token]);
@@ -32,7 +30,7 @@ function ListaProdutos() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        toastAlerta("O token expirou, favor logar novamente", "erro");
+        alert("O token expirou, favor logar novamente");
         handleLogout();
       }
     }
@@ -78,4 +76,3 @@ function ListaProdutos() {
 }
 
 export default ListaProdutos;
-

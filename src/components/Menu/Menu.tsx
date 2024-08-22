@@ -13,7 +13,7 @@ function Menu({
 }) {
   return (
     <>
-      <Link to={"/"}>
+      <Link to={"/?scrollTo=home"}>
         <div className="hover:scale-105 transition-all pb-4">
           <Logo height={36} width={102} color="#515839" />
         </div>

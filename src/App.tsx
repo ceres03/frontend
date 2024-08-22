@@ -20,7 +20,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <AuthProvider>
-      <ToastContainer/>
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

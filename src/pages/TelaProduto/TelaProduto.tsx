@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from 'react'
 import { Bag } from '@phosphor-icons/react'
 import { AuthContext } from '../../contexts/AuthContext'
