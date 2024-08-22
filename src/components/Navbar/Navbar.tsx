@@ -11,6 +11,7 @@ function Navbar() {
   const admin: boolean = email == "root@root.com";
 
   return (
+
     <div className="relative bg-white drop-shadow-md">
       <nav className="navbar container mx-auto text-[#515839] font-poppins px-4">
         <Menu links={links} adminLinks={adminLinks} admin={admin} />
