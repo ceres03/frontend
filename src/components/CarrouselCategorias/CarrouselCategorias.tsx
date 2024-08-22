@@ -14,6 +14,7 @@ import CardCategorias from "../Categorias/cardCategorias/CardCategorias";
 import { buscar } from "../../services/Service";
 import { useEffect, useState } from "react";
 import Categoria from "../../models/Categoria";
+import marketCart from '../../assets/outlineKart.svg';
 
 function CarrouselCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -40,7 +41,7 @@ function CarrouselCategorias() {
         <>
           <div className="container mx-auto flex-col items-center text-[#515839] hidden lg:flex">
             <img
-              src="/src/assets/outlineKart.svg"
+              src={marketCart}
               alt="image de carrinho"
               height={64}
               width={64}
