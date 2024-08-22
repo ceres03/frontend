@@ -32,7 +32,7 @@ function Home() {
           type="button"
           className="flex justify-center items-center lg:w-[400px] xl:w-[500px] h-[50px] py-2 px-8 md:p-6 lg:p-2 gap-2 bg-[#515839] hover:bg-[#7C8758] text-white font-bold rounded-xl hover:scale-[103%] transition-all duration-[0.6s] z-10"
         >
-          <a href="#">Procurar colaborador próximo a mim </a>
+          <a href="#">Procurar produtor próximo a mim </a>
           <MapPin size={32} className="" />
         </button>
         <img
