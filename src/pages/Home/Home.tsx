@@ -4,10 +4,27 @@ import logoHome from "../../assets/logo.svg";
 import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
 import { MapPin } from "@phosphor-icons/react";
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 function Home() {
 
+  const { search } = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const scrollTo = params.get('scrollTo');
+  
+    if (scrollTo === 'sobre') {
+      const sobreSection = document.getElementById('sobre-section');
+      if (sobreSection) {
+        sobreSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (scrollTo === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [search]);
 
   return (
     <>
@@ -26,7 +43,9 @@ function Home() {
         <img src={image2} alt="imagem2" className="absolute z-0 right-[-30px] h-[100%] hover:scale-105 transition-all duration-[0.5s]" />
       </section>
 
-      <Sobre />
+      <section id="sobre-section">
+        <Sobre />
+      </section>
     </>
   );
 }

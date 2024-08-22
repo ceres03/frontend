@@ -8,18 +8,14 @@ import { AuthContext } from "../../contexts/AuthContext";
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
 
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const email = usuario.email;
   const admin: boolean = email == 'root@root.com'
 
-
-
-
   return (
     <>
       <nav className=" flex justify-between  text-[#515839] py-6 pl-8 md:pl-32 drop-shadow-md font-sansita bg-[#ffffff] w-full">
-        <Link to={"/"} className="">
+        <Link to={"/home?scrollTo=home"} className="">
           <img
             src={cereslogo}
             alt="Logotipo"
@@ -28,7 +24,7 @@ function Navbar() {
         </Link>
         <ul className="hidden xl:flex items-center gap-12 font-semibold text-base ml-[3%]">
           <li>
-            <Link className="nav" to={"/"}>
+            <Link to="/home?scrollTo=home" className="nav">
               Home
             </Link>
           </li>
@@ -38,7 +34,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to='/?scrollTo=sobre' className="nav">
+            <Link to='/home?scrollTo=sobre' className="nav">
               Sobre nós
             </Link>
           </li>
@@ -90,9 +86,8 @@ function Navbar() {
           <Hamburger />
         </div>
         <div
-          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute xl:hidden top-24 left-0 p-4 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
           style={{ transition: "transform 0.5s ease, opacity 0.5s ease" }}
         >
           {" "}
