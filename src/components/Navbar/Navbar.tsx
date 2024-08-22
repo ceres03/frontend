@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <>
       <nav className=" flex justify-between  text-[#515839] py-6 pl-8 md:pl-32 drop-shadow-md font-sansita bg-[#ffffff] w-full">
-        <Link to={"/home?scrollTo=home"} className="">
+        <Link to={"/?scrollTo=home"} className="">
           <img
             src={cereslogo}
             alt="Logotipo"
@@ -24,7 +24,7 @@ function Navbar() {
         </Link>
         <ul className="hidden xl:flex items-center gap-12 font-semibold text-base ml-[3%]">
           <li>
-            <Link to="/home?scrollTo=home" className="nav">
+            <Link to="/?scrollTo=home" className="nav">
               Home
             </Link>
           </li>
@@ -34,7 +34,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to='/home?scrollTo=sobre' className="nav">
+            <Link to='/?scrollTo=sobre' className="nav">
               Sobre nós
             </Link>
           </li>
