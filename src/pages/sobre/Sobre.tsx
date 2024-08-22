@@ -1,5 +1,5 @@
 import "../sobre/Sobre.css";
-
+import sobrepng from '../../assets/sobre.png'
 function Sobre() {
 
   return (
@@ -18,7 +18,7 @@ function Sobre() {
         <button className="saiba-mais-button">Saiba mais ↗</button>
       </div>
       <div className="image-container">
-        <img src="src/assets/sobre.png" alt="Imagem de agricultura" />
+        <img src= {sobrepng}></img>
       </div>
     </div>
   );
