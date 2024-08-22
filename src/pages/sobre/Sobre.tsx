@@ -6,7 +6,7 @@ function Sobre() {
       className="sobre-container flex-col lg:flex-row ml-[4%] my-10"
       id="sobre"
     >
-      <div className="text-container">
+      <div className="text-container font-sansita">
         <h1>Sobre a Ceres</h1>
         <p>
           Um aplicativo voltado para distribuição e aumento de visibilidade de
