@@ -16,7 +16,7 @@ function Home() {
   useEffect(() => {
     const params = new URLSearchParams(search);
     const scrollTo = params.get('scrollTo');
-  
+
     if (scrollTo === 'sobre') {
       const sobreSection = document.getElementById('sobre-section');
       if (sobreSection) {
