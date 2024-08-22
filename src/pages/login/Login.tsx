@@ -37,7 +37,7 @@ function Login() {
   }
 
   return (
-    <div className="flex h-[100vh] max-w-[1920px] mx-auto">
+    <div className="flex h-[100vh] mx-auto">
       <img src={imageLogin} className="h-full hidden lg:flex" />
       <div className="flex justify-center items-center flex-col w-full ">
         <Link to="/">
