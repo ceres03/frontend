@@ -37,7 +37,7 @@ function Login() {
   }
 
   return (
-    <div className="flex h-[100vh] max-w-[1920px] mx-auto">
+    <div className="flex h-[100vh] mx-auto">
       <img src={imageLogin} className="h-full hidden lg:flex" />
       <div className="flex justify-center items-center flex-col w-full ">
         <Link to="/">
@@ -46,7 +46,7 @@ function Login() {
             className="w-[110px] hover:scale-110 transition-all duration-[.5s]"
           />
         </Link>
-        <p className="mt-[8px] font-semibold text-[48px] text-[#515839]">
+        <p className="mt-[8px] font-sansista text-[48px] text-[#515839]">
           Boas vindas
         </p>
         <p className=" font-normal text-[20px] text-[#515839]">

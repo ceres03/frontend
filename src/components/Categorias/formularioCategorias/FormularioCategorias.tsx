@@ -90,7 +90,7 @@ function FormularioCategorias() {
 
   return (
     <div className=" flex flex-col items-center h-[70vh] pt-[7%] mx-auto mt-32">
-      <h1 className="text-4xl text-center my-8 text-[#515839] font-semibold">
+      <h1 className="text-4xl text-center my-8 text-[#515839] font-sansita">
         {id !== undefined ? "Editar Categoria" : "Cadastrar Categoria"}
       </h1>
 

@@ -1,13 +1,12 @@
 import "../sobre/Sobre.css";
-import sobrepng from '../../assets/sobre.png'
+import sobrepng from "../../assets/sobre.png";
 function Sobre() {
-
   return (
     <div
-      className="sobre-container flex-col lg:flex-row container mx-auto my-10"
+      className="sobre-container flex-col lg:flex-row ml-[4%] my-10"
       id="sobre"
     >
-      <div className="text-container">
+      <div className="text-container font-sansita">
         <h1>Sobre a Ceres</h1>
         <p>
           Um aplicativo voltado para distribuição e aumento de visibilidade de
@@ -18,7 +17,7 @@ function Sobre() {
         <button className="saiba-mais-button">Saiba mais ↗</button>
       </div>
       <div className="image-container">
-        <img src= {sobrepng}></img>
+        <img src={sobrepng}></img>
       </div>
     </div>
   );

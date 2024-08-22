@@ -7,6 +7,7 @@ import Logo from "../../components/Logo/Logo";
 import CarrouselCategorias from "../../components/CarrouselCategorias/CarrouselCategorias";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Parceiros from "../parceiros/Parceiros";
 
 function Home() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function Home() {
       <section id="sobre-section">
         <Sobre />
       </section>
+      <Parceiros />
     </>
   );
 }

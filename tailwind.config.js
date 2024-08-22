@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      fontFamily: {
+        sansita: ["Sansita", "sans-serif"],
+      },
       fontWeight: {
         extralight: 200,
       },
