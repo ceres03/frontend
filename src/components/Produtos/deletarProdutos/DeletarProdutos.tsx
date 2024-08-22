@@ -62,18 +62,37 @@ function DeletarProdutos() {
 
         retornar()
     }
+
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar produto</h1>
+        <div className="container flex flex-col mx-auto items-center pt-[5%] mt-32 pb-8">
+            <h1 className="text-4xl text-center my-8 font-semibold text-[#515839]">
+                Deletar Produto
+            </h1>
 
-            <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar o produto a seguir?</p>
+            <p className="text-center font-semibold mb-4 text-[#515839]">
+                Você tem certeza de que deseja apagar o produto a seguir?
+            </p>
 
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>{produto.nome}</header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{produto.descricao}</p>
+
+
+            <div className="border-[1px] border-[#909b6e] rounded-[16px] overflow-hidden w-1/2">
+                <header className="py-4 px-6 bg-[#80885f] text-white font-bold text-2xl text-center">
+                    {produto.nome}
+                </header>
+                <p className="p-8 text-3xl bg-[#fbfdf1] h-full text-center text-[#515839]">
+                    {produto.descricao}
+                </p>
                 <div className="flex">
-                    <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={deletarProdutos}>
+                    <button
+                        className="w-1/2 text-white bg-red-400 hover:bg-red-600 py-4 font-bold"
+                        onClick={retornar}
+                    >
+                        Não
+                    </button>
+                    <button
+                        className="w-1/2 text-white bg-[#7C8758] hover:bg-[#515839] py-4 font-bold"
+                        onClick={deletarProdutos}
+                    >
                         Sim
                     </button>
                 </div>
