@@ -8,6 +8,10 @@ const links = [
     url: "/?scrollTo=sobre",
   },
   {
+    name: "Parceiros",
+    url: "/parceiros",
+  },
+  {
     name: "Login",
     url: "/login",
   },
