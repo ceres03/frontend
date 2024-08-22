@@ -10,10 +10,6 @@ function Navbar() {
   const email = usuario.email;
   const admin: boolean = email == "root@root.com";
 
-  const { usuario, handleLogout } = useContext(AuthContext);
-  const email = usuario.email;
-  const admin: boolean = email == 'root@root.com'
-
   return (
     <div className="relative bg-white drop-shadow-md">
       <nav className="navbar container mx-auto text-[#515839] font-poppins px-4">
