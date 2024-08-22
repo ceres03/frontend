@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import Produto from '../../../models/Produto';
 import "../cardProdutos/CardProdutos.css"
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 
 function CardProdutos(post: Produto) {
+
+    const { usuario } = useContext(AuthContext);
+    const email = usuario.email;
+    const admin: boolean = email == "root@root.com";
+
     return (
         <div className="border flex flex-col rounded-2xl overflow-hidden justify-between mb-8">
             <div className='flex-shrink-0 h-1,5/3'>
@@ -21,14 +28,16 @@ function CardProdutos(post: Produto) {
                 </div>
                 <div></div>
             </div>
-            <div className="button-container">
-                <Link to={`/editarProdutos/${post.id}`}>
-                    <button className="btn btn-2 btn-sep icon-cart">Editar</button>
-                </Link>
-                <Link to={`/deletarProdutos/${post.id}`}>
-                    <button className="btn btn-3 btn-sep icon-trash">Deletar</button>
-                </Link>
-            </div>
+            {admin && (
+                <div className="button-container">
+                    <Link to={`/editarProdutos/${post.id}`}>
+                        <button className="btn btn-2 btn-sep icon-cart">Editar</button>
+                    </Link>
+                    <Link to={`/deletarProdutos/${post.id}`}>
+                        <button className="btn btn-3 btn-sep icon-trash">Deletar</button>
+                    </Link>
+                </div>
+            )}
         </div>
     );
 }
