@@ -34,10 +34,10 @@ function App() {
             <Route path="/cadastroProduto" element={<FormularioProdutos />} />
             <Route path="/editarProdutos/:id" element={<FormularioProdutos />} />
             <Route path="/deletarProdutos/:id" element={<DeletarProdutos />} />
+            <Route path="/telaProduto/:id" element={<TelaProduto />} />
           </Route>
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/telaProduto/:id" element={<TelaProduto />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

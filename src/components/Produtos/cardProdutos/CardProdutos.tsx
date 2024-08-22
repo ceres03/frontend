@@ -34,10 +34,10 @@ function CardProdutos(produto: Produto) {
             </div>
             {admin && (
                 <div className="button-container">
-                    <Link to={`/editarProdutos/${post.id}`}>
+                    <Link to={`/editarProdutos/${produto.id}`}>
                         <button className="btn btn-2 btn-sep icon-cart">Editar</button>
                     </Link>
-                    <Link to={`/deletarProdutos/${post.id}`}>
+                    <Link to={`/deletarProdutos/${produto.id}`}>
                         <button className="btn btn-3 btn-sep icon-trash">Deletar</button>
                     </Link>
                 </div>
