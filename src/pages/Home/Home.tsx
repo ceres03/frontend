@@ -52,10 +52,10 @@ function Home() {
           className="absolute top-0 right-[-150px] md:right-[-100px] lg:right-[-50px] z-0 hover:scale-105 transition-all duration-[0.5s] h-screen opacity-40 lg:opacity-100"
         />
       </section>
+      <CarrouselCategorias />
       <section id="sobre-section">
         <Sobre />
       </section>
-      <CarrouselCategorias />
 
     </>
   );
