@@ -1,0 +1,15 @@
+.mobile__menu {
+  @apply hidden absolute top-24 left-0 xl:hidden p-4 w-full bg-white transform transition-transform opacity-0 flex-col items-center gap-6 text-lg;
+}
+
+.mobile__menu.open {
+  @apply flex;
+}
+
+.mobile__menu.fade-in {
+  @apply opacity-100;
+}
+
+.mobile__menu li {
+  @apply w-full text-center p-2 hover:hover:text-[#f77235] rounded-md transition-all cursor-pointer list-none;
+}
