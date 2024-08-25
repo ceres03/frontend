@@ -14,7 +14,7 @@ function CardProdutos(produto: Produto) {
     return (
         <div className="border flex flex-col rounded-2xl overflow-hidden justify-between mb-8 relative hover:scale-[1.01] transition-all duration-[.5s]">
             <Link to={`/telaProduto/${produto.id}`}>
-                <div className='flex-shrink-0 h-auto relative'>
+                <div className='flex-shrink-0 h-[300px] relative'>
                     <img
                         src={produto.imagem}
                         className='w-full h-full object-cover'
@@ -27,9 +27,9 @@ function CardProdutos(produto: Produto) {
             </Link>
             <div className='flex-1 p-4 flex flex-col justify-between'>
                 <div>
-                    <h2 className='text-2xl font-bold mb-2'>{produto.nome}</h2>
-                    <p className='text-lg font-semibold mb-2'>{produto.descricao}</p>
-                    <p className='text-lg font-semibold mb-4'>{produto.preco}</p>
+                    <h2 className='text-[#393939] text-[24px] font-bold mb-2'>{produto.nome}</h2>
+                    <p className='text-[#393939] text-[16px] font-normal mb-2'>{produto.descricao}</p>
+                    <p className='text-[#515839] text-[32px] font-bold mb-4'>{produto.preco.toFixed(2).replace('.',',')}</p>
                 </div>
             </div>
             {admin && (
