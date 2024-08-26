@@ -64,59 +64,61 @@ function TelaProduto() {
   }
 
   return (
-    <div className="flex w-auto h-[100vh] m-auto p-[5%] ">
-      <div className="flex m-5 rounded-[50px]">
+    <div className="flex flex-col md:flex-row w-full items-center md:items-stretch h-auto m-auto p-4 md:p-[5%] content pt-24">
+      <div className="flex w-full md:w-[50%] m-5 rounded-[50px] justify-center">
         <img
           src={produto.imagem}
           alt="foto do produto"
-          className="rounded-[30px]"
+          className="rounded-[30px] w-full h-auto"
         />
       </div>
 
-      <section className="flex flex-col w-[40%] m-5 p-5 border rounded-[30px]">
-        <div>
-          <h1 className="align-start text-[32px]">{produto.nome}</h1>
-          <h6>5.0</h6>
+      <section className="flex flex-col w-full md:w-[50%] m-5 p-5 border rounded-[30px]">
+        <div className="flex flex-col">
+          <h1 className="text-[#393939] text-[24px] md:text-[32px]">{produto.nome}</h1>
+          <div className="flex items-center mt-1">
+            <span className="text-[#393939] text-[12px] md:text-[16px] font-medium">5.0</span>
+          </div>
         </div>
 
-        <div className="text-[30px] mt-2 font-bold text-[#515839]">
-          R${produto.preco}
+        <div className="text-[32px] md:text-[64px] mt-2 font-bold text-[#515839]">
+          R$ {produto.preco.toFixed(2).replace('.', ',')}
         </div>
 
-        <div className="flex float-start bg-[#E5EACB8F] mt-8 p-2 rounded-xl">
+        <div className="flex items-center bg-[#E5EACB8F] mt-4 p-2 rounded-xl">
           <img
             src={produto.usuario.foto}
             alt="Foto Vendedor"
-            className="flex rounded-[50%] bg-slate-500 size-10 "
+            className="rounded-full w-10 h-10"
           />
-          <div>
-            <h6 className="pl-2 text-[10px] text-[#515839]">vendido por</h6>
-            <h3 className="pl-2 font-bold text-[#515839]">
+          <div className="ml-3">
+            <h6 className="text-[12px] text-[#515839]">vendido por</h6>
+            <h3 className="text-[16px] md:text-[24px] font-semibold text-[#515839]">
               {produto.usuario.nome}
             </h3>
           </div>
         </div>
-        <div className="mt-8 border rounded-xl p-3">
-          <h3>Descrição</h3>
-          <p className="pt-2">{produto.descricao}</p>
+        <div className="mt-4 border rounded-xl p-3">
+          <h3 className="text-[#393939] font-medium">Descrição</h3>
+          <p className="text-[#393939] pt-2 text-sm md:text-base">{produto.descricao}</p>
         </div>
 
-        <div className="flex border mt-8 p-3 justify-between rounded-xl">
-          <p>Quantidade Disponivel</p>
-          <p className="text-[#515839] font-medium">
-            Unidades disponíveis: {produto.quantidade}
+        <div className="flex border mt-4 p-3 justify-between rounded-xl">
+          <p className="text-[#393939] font-medium text-sm md:text-base">Quantidade Disponivel</p>
+          <p className="text-[#515839] font-medium text-sm md:text-base">
+            + {produto.quantidade} unidades disponíveis
           </p>
         </div>
 
-        <a href="#" className="flex mt-16">
-          <h1 className="flex rounded-xl w-full h-14 justify-center items-center bg-[#515839] text-white gap-2 font-bold">
+        <a href="#" className="flex mt-6">
+          <button className="flex rounded-xl w-full h-14 justify-center items-center bg-[#515839] text-white gap-2 font-bold">
             Comprar agora <Bag size={32} />
-          </h1>
+          </button>
         </a>
         <a href="#">
-          <h1 className="mt-4 flex rounded-xl w-full h-14 justify-center items-center bg-[#E5EACB] text-[#515839] gap-2 font-bold">
+          <button className="mt-4 flex rounded-xl w-full h-14 justify-center items-center bg-[#E5EACB] text-[#515839] gap-2 font-bold">
             Adicionar ao carrinho <Bag size={32} />
-          </h1>
+          </button>
         </a>
       </section>
     </div>
