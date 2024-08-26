@@ -64,7 +64,7 @@ function TelaProduto() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row w-full items-center md:items-stretch h-auto m-auto p-4 md:p-[5%] content pt-24">
+    <div className="relative flex flex-col md:flex-row w-full items-center md:items-stretch h-auto m-auto p-4 md:p-[5%] content pt-24 md:pt-[120px]">
       <div className="flex w-full md:w-[50%] m-5 rounded-[50px] justify-center">
         <img
           src={produto.imagem}
