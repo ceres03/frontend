@@ -60,6 +60,7 @@ function ListaProdutos() {
               descricao={produto.descricao}
               preco={produto.preco}
               quantidade={produto.quantidade}
+              quantidadeNoCarrinho={produto.quantidadeNoCarrinho}
               usuario={produto.usuario}
               categoria={produto.categoria}
             />
