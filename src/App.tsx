@@ -14,6 +14,7 @@ import Layout from "./components/Layout/Layout";
 import TelaProduto from "./pages/TelaProduto/TelaProduto";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import SobreNos from "./pages/SobreNos/SobreNos";
 
 function App() {
   return (
@@ -24,27 +25,16 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/categorias" element={<ListarCategorias />} />
-            <Route
-              path="/cadastroCategoria"
-              element={<FormularioCategorias />}
-            />
-            <Route
-              path="/editarCategoria/:id"
-              element={<FormularioCategorias />}
-            />
-            <Route
-              path="/deletarCategoria/:id"
-              element={<DeletarCategorias />}
-            />
+            <Route path="/cadastroCategoria" element={<FormularioCategorias />}/>
+            <Route path="/editarCategoria/:id" element={<FormularioCategorias />} />
+            <Route path="/deletarCategoria/:id" element={<DeletarCategorias />} />
             <Route path="/produtos" element={<ListaProdutos />} />
             <Route path="/cadastroProduto" element={<FormularioProdutos />} />
-            <Route
-              path="/editarProdutos/:id"
-              element={<FormularioProdutos />}
-            />
+            <Route path="/editarProdutos/:id" element={<FormularioProdutos />} />
             <Route path="/deletarProdutos/:id" element={<DeletarProdutos />} />
             <Route path="/telaProduto/:id" element={<TelaProduto />} />
           </Route>
+          <Route path="/sobrenos" element={<SobreNos />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
         </Routes>

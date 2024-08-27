@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 768px) {
+    .editFoto {
+        @apply flex justify-center bg-cover flex-col
+    }
+
+    .participantes {
+        @apply flex-col
+    }
+
+    .sobre {
+        @apply p-0 
+    }
+}
+
+.editFoto {
+    @apply w-52 overflow-hidden flex items-center justify-center rounded-lg opacity-90 hover:scale-[103%] duration-[0.7s] transition-all hover:opacity-100 hover:z-10
+}
+
+.editImagem {
+    @apply h-full object-cover 
+}

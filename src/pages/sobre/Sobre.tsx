@@ -1,5 +1,7 @@
 import "../sobre/Sobre.css";
 import sobrepng from "../../assets/sobre.png";
+import { Link } from "react-router-dom";
+
 function Sobre() {
   return (
     <div
@@ -14,7 +16,7 @@ function Sobre() {
           descentralizados do mercado padrão (idealmente menores) voltados para
           a população vulnerável das cidades.
         </p>
-        <button className="saiba-mais-button">Saiba mais ↗</button>
+        <button className="saiba-mais-button"><Link to="/sobreNos" /> Saiba mais ↗</button>
       </div>
       <div className="image-container">
         <img src={sobrepng}></img>
