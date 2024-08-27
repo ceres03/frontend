@@ -11,13 +11,8 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-      <img
-        src={footerpng}
-        alt=""
-        height={780}
-        className="w-full max-w-[1920px] mx-auto"
-      />
-      <div className="flex justify-center bg-[#515839] text-white max-w-[1920px] mx-auto">
+      <img src={footerpng} alt="" height={780} className="w-full mx-auto" />
+      <div className="flex justify-center bg-[#515839] text-white mx-auto">
         <div className="container flex flex-col p-4">
           <img
             src={sarahlogo}
