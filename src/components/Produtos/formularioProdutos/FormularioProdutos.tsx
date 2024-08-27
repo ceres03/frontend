@@ -27,6 +27,7 @@ function FormularioProdutos() {
     nome: "",
     preco: 0,
     quantidade: 0,
+    quantidadeNoCarrinho: 0,
     descricao: "",
     imagem: "",
     categoria: null,
