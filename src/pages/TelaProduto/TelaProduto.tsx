@@ -17,10 +17,27 @@ function TelaProduto() {
   const token = usuario.token;
 
   const adicionarAoCarrinho = (produto: Produto) => {
-
-    const produtoAtualizado : Produto = {...produto,quantidadeNoCarrinho:1}
-    
-    setProdutos(anterior => [...anterior, produtoAtualizado])}
+    setProdutos(anterior => {
+     
+      const produtoExistente = anterior.find(a => a.id === produto.id);
+  
+      if (produtoExistente) {
+        return anterior.map((a) => {
+          if (a.id === produto.id) {
+            if (a.quantidadeNoCarrinho < a.quantidade) {
+              return { ...a, quantidadeNoCarrinho: a.quantidadeNoCarrinho + 1 };
+            }
+            return a;
+          }
+          return a;
+        });
+      } else {
+        const produtoAtualizado: Produto = { ...produto, quantidadeNoCarrinho: 1 };
+        return [...anterior, produtoAtualizado];
+      }
+    });
+  };
+  
 
   function retornar() {
     navigate("/produtos");
