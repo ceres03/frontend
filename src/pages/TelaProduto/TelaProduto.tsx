@@ -6,20 +6,21 @@ import Produto from "../../models/Produto";
 import { useNavigate, useParams } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import { toastAlerta } from "../../utils/toastAlerta";
+import { CartContext } from "../../contexts/CartContext";
 
 function TelaProduto() {
   const [produto, setProduto] = useState<Produto | null>(null);
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const { usuario, handleLogout } = useContext(AuthContext);
+  const { produtos, setProdutos } = useContext(CartContext);
   const token = usuario.token;
 
-  useEffect(() => {
-    if (token === "") {
-      toastAlerta("Você precisa estar logado", "info");
-      navigate("/login");
-    }
-  }, [token]);
+  const adicionarAoCarrinho = (produto: Produto) => {
+
+    const produtoAtualizado : Produto = {...produto,quantidadeNoCarrinho:1}
+    
+    setProdutos(anterior => [...anterior, produtoAtualizado])}
 
   function retornar() {
     navigate("/produtos");
@@ -116,7 +117,7 @@ function TelaProduto() {
           </button>
         </a>
         <a href="#">
-          <button className="mt-4 flex rounded-xl w-full h-14 justify-center items-center bg-[#E5EACB] text-[#515839] gap-2 font-bold">
+          <button onClick={() => adicionarAoCarrinho (produto)} className="mt-4 flex rounded-xl w-full h-14 justify-center items-center bg-[#E5EACB] text-[#515839] gap-2 font-bold">
             Adicionar ao carrinho <Bag size={32} />
           </button>
         </a>

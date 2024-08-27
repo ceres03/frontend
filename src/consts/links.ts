@@ -15,11 +15,15 @@ const links = [
     name: "Cadastro",
     url: "/cadastro",
   },
+  {
+    name: "Carrinho",
+    url: "/carrinho",
+  },
 ];
 
 const adminLinks = [
   {
-    name: "Criar Produto",
+    name: "Cadastrar Produto",
     url: "/cadastroProduto",
   },
   {

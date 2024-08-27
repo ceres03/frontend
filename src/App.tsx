@@ -14,9 +14,12 @@ import Layout from "./components/Layout/Layout";
 import TelaProduto from "./pages/TelaProduto/TelaProduto";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { CartProvider } from "./contexts/CartContext";
+import Carrinho from "./pages/Carrinho/Carrinho";
 
 function App() {
   return (
+    <CartProvider>
     <AuthProvider>
       <ToastContainer />
       <BrowserRouter>
@@ -37,6 +40,7 @@ function App() {
               element={<DeletarCategorias />}
             />
             <Route path="/produtos" element={<ListaProdutos />} />
+            <Route path="/carrinho" element={<Carrinho />} />
             <Route path="/cadastroProduto" element={<FormularioProdutos />} />
             <Route
               path="/editarProdutos/:id"
@@ -50,6 +54,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+    </CartProvider>
   );
 }
 export default App;
