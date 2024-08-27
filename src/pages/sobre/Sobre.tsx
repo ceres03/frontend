@@ -16,7 +16,9 @@ function Sobre() {
           descentralizados do mercado padrão (idealmente menores) voltados para
           a população vulnerável das cidades.
         </p>
-        <button className="saiba-mais-button"><Link to="/sobreNos" /> Saiba mais ↗</button>
+        <Link to='/sobreNos'>
+          <button className="saiba-mais-button">Saiba mais ↗</button>
+        </Link>
       </div>
       <div className="image-container">
         <img src={sobrepng}></img>
