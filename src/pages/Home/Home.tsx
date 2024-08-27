@@ -25,7 +25,7 @@ function Home() {
 
   return (
     <>
-      <section className="h-screen w-screen flex flex-col justify-center items-center mt-20 gap-20 max-w-[1920px] mx-auto bg-[#fdfff6]">
+      <section className="h-screen w-full flex flex-col justify-center items-center mt-20 gap-20 mx-auto bg-[#fdfff6] overflow-hidden relative">
         <div className="flex justify-center items-center p-8 z-10">
           <Logo height={75} width={212.5} color="#515839"></Logo>
         </div>
