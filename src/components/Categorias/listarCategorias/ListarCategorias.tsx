@@ -56,7 +56,7 @@ function ListarCategorias() {
           />
         </div>
       )}
-      <div className="container mx-auto my-4 mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="container mx-auto my-4 mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-4">
         {categorias.map((categoria) => (
           <CardCategorias key={categoria.id} categoria={categoria} />
         ))}
