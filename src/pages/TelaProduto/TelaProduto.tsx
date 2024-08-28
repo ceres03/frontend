@@ -33,6 +33,7 @@ function TelaProduto() {
         });
       } else {
         const produtoAtualizado: Produto = { ...produto, quantidadeNoCarrinho: 1 };
+        toastAlerta("Produto adicionado ao carrinho", "sucesso")
         return [...anterior, produtoAtualizado];
       }
     });

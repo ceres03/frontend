@@ -50,6 +50,7 @@ function Carrinho() {
 
   function removerProduto(id: number) {
     setProdutos((prev) => prev.filter((produto) => produto.id !== id));
+    toastAlerta("Produto removido do carrinho", "info")
   }
 
   function verProdutos() {
