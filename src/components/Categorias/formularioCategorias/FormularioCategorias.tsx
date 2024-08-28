@@ -89,8 +89,8 @@ function FormularioCategorias() {
   const carregandoCategoria = categoria.descricao === "";
 
   return (
-    <div className=" flex flex-col items-center h-[70vh] pt-[7%] mx-auto mt-32">
-      <h1 className="text-4xl text-center my-8 text-[#515839] font-sansita">
+    <div className=" flex flex-col items-center h-[70vh] pt-[1%] mx-auto mt-32">
+      <h1 className="text-4xl text-center my-8 text-[#515839] font-poppins">
         {id !== undefined ? "Editar Categoria" : "Cadastrar Categoria"}
       </h1>
 
@@ -126,7 +126,7 @@ function FormularioCategorias() {
         <button
           disabled={carregandoCategoria}
           type="submit"
-          className="rounded-[15px] disabled:bg-[#E5EACB] bg-[#C8D198] hover:bg-[#7C8758] text-white font-bold w-1/3 mx-auto block py-2 transition-all duration-[0.15s]"
+          className="font-poppins rounded-[15px] disabled:bg-[#E5EACB] bg-[#C8D198] hover:bg-[#7C8758] text-white font-bold w-1/3 mx-auto block py-2 transition-all duration-[0.15s]"
         >
           {carregandoCategoria ? (
             <span>Carregando</span>

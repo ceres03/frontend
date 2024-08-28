@@ -139,8 +139,8 @@ function FormularioProdutos() {
   const carregandoCategoria = categoria.descricao === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center pt-[5%] mt-32 pb-8">
-      <h1 className="text-4xl text-center my-8 font-sansita text-[#515839]">
+    <div className="container flex flex-col mx-auto items-center pt-[1%] mt-32 pb-8">
+      <h1 className="text-4xl text-center my-8 font-poppins text-[#515839]">
         {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
       </h1>
 
