@@ -20,6 +20,8 @@ function Home() {
       }
     } else if (location.search == "?scrollTo=home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (location.search == "?scrollTo=parceiros") {
+      window.scrollTo({ top: 2500, behavior: "smooth" });
     }
   }, [location]);
 

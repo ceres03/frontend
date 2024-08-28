@@ -4,8 +4,16 @@ const links = [
     url: "/produtos",
   },
   {
+    name: "Carrinho",
+    url: "/carrinho",
+  },
+  {
     name: "Sobre nós",
     url: "/?scrollTo=sobre",
+  },
+  {
+    name: "Parceiros",
+    url: "/?scrollTo=parceiros",
   },
   {
     name: "Login",
@@ -14,10 +22,6 @@ const links = [
   {
     name: "Cadastro",
     url: "/cadastro",
-  },
-  {
-    name: "Carrinho",
-    url: "/carrinho",
   },
 ];
 
