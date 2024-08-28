@@ -53,7 +53,7 @@ function CarrouselCategorias() {
             <Swiper
               modules={[Navigation]}
               spaceBetween={50}
-              slidesPerView={3}
+              slidesPerView={4}
               navigation
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
