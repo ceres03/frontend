@@ -37,8 +37,8 @@ function App() {
             <Route path="/editarProdutos/:id" element={<FormularioProdutos />} />
             <Route path="/deletarProdutos/:id" element={<DeletarProdutos />} />
             <Route path="/telaProduto/:id" element={<TelaProduto />} />
+            <Route path="/sobrenos" element={<SobreNos />} />
           </Route>
-          <Route path="/sobrenos" element={<SobreNos />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
         </Routes>
