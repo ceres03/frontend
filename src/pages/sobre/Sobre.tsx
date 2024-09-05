@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Sobre() {
   return (
-    <div className="sobre-container flex-col lg:flex-row my-10" id="sobre">
+    <div className="sobre-container flex-col lg:flex-row py-10" id="sobre">
       <div className="text-container font-poppins">
         <h1 className="text-3xl md:text-4xl font-bold">Sobre a Ceres</h1>
         <p className="break-normal hyphens-auto">
@@ -13,7 +13,7 @@ function Sobre() {
           descentralizados do mercado padrão voltados para a população
           vulnerável das cidades.
         </p>
-        <Link to='/sobreNos'>
+        <Link to="/sobre-nos">
           <button className="saiba-mais-button">Saiba mais ↗</button>
         </Link>
       </div>
