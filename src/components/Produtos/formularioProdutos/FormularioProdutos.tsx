@@ -20,6 +20,7 @@ function FormularioProdutos() {
     id: 0,
     nome: "",
     descricao: "",
+    produto: [],
   });
 
   const [produto, setProduto] = useState<Produto>({
