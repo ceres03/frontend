@@ -17,6 +17,7 @@ function FormularioCategorias() {
     id: 0,
     nome: "",
     descricao: "",
+    produto: [],
   });
 
   async function buscarPorId(id: string) {
