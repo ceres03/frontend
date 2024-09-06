@@ -17,14 +17,14 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
   return (
     <div className="border flex flex-col rounded-2xl overflow-hidden justify-between mb-8">
       <img
-        src={orangespng}
+        src={categoria.produto[0]?.imagem || orangespng}
         alt={categoria.nome}
         className="w-full h-[210px] object-cover"
       />
       <h2 className="py-6 px-6 text-[#515839] font-bold text-2xl">
         {categoria.nome}
       </h2>
-      <p className="px-6 pb-8 text-base bg-white h-full">
+      <p className="px-6 pb-8 text-base bg-white h-[80px] w-[272.9px] overflow-hidden text-ellipsis whitespace-nowrap text-wrap">
         {categoria.descricao}
       </p>
       {admin && (

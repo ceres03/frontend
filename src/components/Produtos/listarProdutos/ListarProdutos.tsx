@@ -4,7 +4,6 @@ import Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import CardProduto from "../cardProdutos/CardProdutos";
 import { toastAlerta } from "../../../utils/toastAlerta";
-import { cacheProdutos } from "../../../consts/links";
 import LoadingPage from "../../LoadingPage.tsx/LoadingPage";
 
 function ListaProdutos() {
@@ -37,35 +36,20 @@ function ListaProdutos() {
         <LoadingPage />
       ) : (
         <div className="container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-4 mt-32">
-          {produtos
-            ? produtos.map((produto) => (
-                <CardProduto
-                  key={produto.id}
-                  id={produto.id}
-                  nome={produto.nome}
-                  imagem={produto.imagem}
-                  descricao={produto.descricao}
-                  preco={produto.preco}
-                  quantidade={produto.quantidade}
-                  quantidadeNoCarrinho={produto.quantidadeNoCarrinho}
-                  usuario={produto.usuario}
-                  categoria={produto.categoria}
-                />
-              ))
-            : cacheProdutos.map((produto) => (
-                <CardProduto
-                  key={produto.id}
-                  id={produto.id}
-                  nome={produto.nome}
-                  imagem={produto.imagem}
-                  descricao={produto.descricao}
-                  preco={produto.preco}
-                  quantidade={produto.quantidade}
-                  quantidadeNoCarrinho={0}
-                  usuario={produto.usuario}
-                  categoria={produto.categoria}
-                />
-              ))}
+          {produtos.map((produto) => (
+            <CardProduto
+              key={produto.id}
+              id={produto.id}
+              nome={produto.nome}
+              imagem={produto.imagem}
+              descricao={produto.descricao}
+              preco={produto.preco}
+              quantidade={produto.quantidade}
+              quantidadeNoCarrinho={produto.quantidadeNoCarrinho}
+              usuario={produto.usuario}
+              categoria={produto.categoria}
+            />
+          ))}
         </div>
       )}
     </>

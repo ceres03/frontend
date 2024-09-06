@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import Categoria from "../../models/Categoria";
 import marketCart from "../../assets/outlineKart.svg";
 import { toastAlerta } from "../../utils/toastAlerta";
-import { cacheCategorias } from "../../consts/links";
+import CardCategoriaSkeleton from "../Categorias/cardCategorias/cardCategoriaSkeleton";
 
 function CarrouselCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -69,12 +69,9 @@ function CarrouselCategorias() {
                       />
                     </SwiperSlide>
                   ))
-                : cacheCategorias.map((categoria, index) => (
+                : [...Array(8).keys()].map((index) => (
                     <SwiperSlide key={index}>
-                      <CardCategorias
-                        key={categoria.id}
-                        categoria={categoria}
-                      />
+                      <CardCategoriaSkeleton />
                     </SwiperSlide>
                   ))}
             </Swiper>
