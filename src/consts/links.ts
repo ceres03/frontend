@@ -9,11 +9,11 @@ const links = [
   },
   {
     name: "Sobre nós",
-    url: "/?scrollTo=sobre",
+    url: "/#sobre",
   },
   {
     name: "Parceiros",
-    url: "/?scrollTo=parceiros",
+    url: "/#parceiros",
   },
   {
     name: "Login",

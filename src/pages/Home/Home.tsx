@@ -5,29 +5,15 @@ import image2 from "../../assets/image2.png";
 import { MapPin } from "@phosphor-icons/react";
 import Logo from "../../components/Logo/Logo";
 import CarrouselCategorias from "../../components/CarrouselCategorias/CarrouselCategorias";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import Parceiros from "../parceiros/Parceiros";
 
 function Home() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.search == "?scrollTo=sobre") {
-      const sobreSection = document.getElementById("sobre-section");
-      if (sobreSection) {
-        sobreSection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else if (location.search == "?scrollTo=home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (location.search == "?scrollTo=parceiros") {
-      window.scrollTo({ top: 2500, behavior: "smooth" });
-    }
-  }, [location]);
-
   return (
     <>
-      <section className="h-screen w-full flex flex-col justify-center items-center mt-20 gap-20 mx-auto bg-[#fdfff6] overflow-hidden relative">
+      <section
+        className="h-screen w-full flex flex-col justify-center items-center pt-24 gap-20 mx-auto bg-[#fdfff6] overflow-hidden relative"
+        id="home"
+      >
         <div className="flex justify-center items-center p-8 z-10">
           <Logo height={75} width={212.5} color="#515839"></Logo>
         </div>

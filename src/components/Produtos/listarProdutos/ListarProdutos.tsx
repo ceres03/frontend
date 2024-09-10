@@ -1,16 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { ThreeDots } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import CardProduto from "../cardProdutos/CardProdutos";
 import { toastAlerta } from "../../../utils/toastAlerta";
+import LoadingPage from "../../LoadingPage.tsx/LoadingPage";
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
-
-  const navigate = useNavigate();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
@@ -35,23 +32,11 @@ function ListaProdutos() {
   }, [produtos.length]);
   return (
     <>
-      {produtos.length === 0 && (
-        <div className="flex justify-center items-center h-screen w-full mt-20">
-          <ThreeDots
-            visible={true}
-            height="200"
-            width="200"
-            color="#4fa94d"
-            radius="9"
-            ariaLabel="three-dots-loading"
-            wrapperStyle={{ justifyContent: "center" }}
-            wrapperClass=""
-          />
-        </div>
-      )}
-      <div className="container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-4 mt-32">
-        {produtos &&
-          produtos?.map((produto) => (
+      {produtos.length === 0 ? (
+        <LoadingPage />
+      ) : (
+        <div className="container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-4 mt-32">
+          {produtos.map((produto) => (
             <CardProduto
               key={produto.id}
               id={produto.id}
@@ -65,7 +50,8 @@ function ListaProdutos() {
               categoria={produto.categoria}
             />
           ))}
-      </div>
+        </div>
+      )}
     </>
   );
 }

@@ -3,24 +3,23 @@ import { Bag } from "@phosphor-icons/react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { buscar } from "../../services/Service";
 import Produto from "../../models/Produto";
-import { useNavigate, useParams } from "react-router-dom";
-import { ThreeDots } from "react-loader-spinner";
+import { useParams } from "react-router-dom";
 import { toastAlerta } from "../../utils/toastAlerta";
 import { CartContext } from "../../contexts/CartContext";
+import LoadingPage from "../../components/LoadingPage.tsx/LoadingPage";
 
 function TelaProduto() {
   const [produto, setProduto] = useState<Produto | null>(null);
-  const navigate = useNavigate();
+
   const { id } = useParams<{ id: string }>();
   const { usuario, handleLogout } = useContext(AuthContext);
-  const { produtos, setProdutos } = useContext(CartContext);
+  const { setProdutos } = useContext(CartContext);
   const token = usuario.token;
 
   const adicionarAoCarrinho = (produto: Produto) => {
-    setProdutos(anterior => {
-     
-      const produtoExistente = anterior.find(a => a.id === produto.id);
-  
+    setProdutos((anterior) => {
+      const produtoExistente = anterior.find((a) => a.id === produto.id);
+
       if (produtoExistente) {
         return anterior.map((a) => {
           if (a.id === produto.id) {
@@ -32,17 +31,15 @@ function TelaProduto() {
           return a;
         });
       } else {
-        const produtoAtualizado: Produto = { ...produto, quantidadeNoCarrinho: 1 };
-        toastAlerta("Produto adicionado ao carrinho", "sucesso")
+        const produtoAtualizado: Produto = {
+          ...produto,
+          quantidadeNoCarrinho: 1,
+        };
+        toastAlerta("Produto adicionado ao carrinho", "sucesso");
         return [...anterior, produtoAtualizado];
       }
     });
   };
-  
-
-  function retornar() {
-    navigate("/produtos");
-  }
 
   async function buscarPorId(id: string) {
     try {
@@ -66,20 +63,7 @@ function TelaProduto() {
   }, [id]);
 
   if (!produto) {
-    return (
-      <div className="flex justify-center items-center h-screen w-full mt-20">
-        <ThreeDots
-          visible={true}
-          height="200"
-          width="200"
-          color="#4fa94d"
-          radius="9"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{ justifyContent: "center" }}
-          wrapperClass=""
-        />
-      </div>
-    );
+    return <LoadingPage />;
   }
 
   return (
@@ -94,14 +78,18 @@ function TelaProduto() {
 
       <section className="flex flex-col w-full md:w-[50%] m-5 p-5 border rounded-[30px]">
         <div className="flex flex-col">
-          <h1 className="text-[#393939] text-[24px] md:text-[32px]">{produto.nome}</h1>
+          <h1 className="text-[#393939] text-[24px] md:text-[32px]">
+            {produto.nome}
+          </h1>
           <div className="flex items-center mt-1">
-            <span className="text-[#393939] text-[12px] md:text-[16px] font-medium">5.0</span>
+            <span className="text-[#393939] text-[12px] md:text-[16px] font-medium">
+              5.0
+            </span>
           </div>
         </div>
 
         <div className="text-[32px] md:text-[64px] mt-2 font-bold text-[#515839]">
-          R$ {produto.preco.toFixed(2).replace('.', ',')}
+          R$ {produto.preco.toFixed(2).replace(".", ",")}
         </div>
 
         <div className="flex items-center bg-[#E5EACB8F] mt-4 p-2 rounded-xl">
@@ -119,11 +107,15 @@ function TelaProduto() {
         </div>
         <div className="mt-4 border rounded-xl p-3">
           <h3 className="text-[#393939] font-medium">Descrição</h3>
-          <p className="text-[#393939] pt-2 text-sm md:text-base">{produto.descricao}</p>
+          <p className="text-[#393939] pt-2 text-sm md:text-base">
+            {produto.descricao}
+          </p>
         </div>
 
         <div className="flex border mt-4 p-3 justify-between rounded-xl">
-          <p className="text-[#393939] font-medium text-sm md:text-base">Quantidade Disponivel</p>
+          <p className="text-[#393939] font-medium text-sm md:text-base">
+            Quantidade Disponivel
+          </p>
           <p className="text-[#515839] font-medium text-sm md:text-base">
             + {produto.quantidade} unidades disponíveis
           </p>
@@ -135,7 +127,10 @@ function TelaProduto() {
           </button>
         </a>
         <a href="#">
-          <button onClick={() => adicionarAoCarrinho (produto)} className="mt-4 flex rounded-xl w-full h-14 justify-center items-center bg-[#E5EACB] text-[#515839] gap-2 font-bold">
+          <button
+            onClick={() => adicionarAoCarrinho(produto)}
+            className="mt-4 flex rounded-xl w-full h-14 justify-center items-center bg-[#E5EACB] text-[#515839] gap-2 font-bold"
+          >
             Adicionar ao carrinho <Bag size={32} />
           </button>
         </a>

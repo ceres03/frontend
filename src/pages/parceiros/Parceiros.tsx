@@ -3,7 +3,10 @@ import parceiros from "../../assets/parceiros.png";
 
 function Parceiros() {
   return (
-    <div className="sobre-container flex-col lg:flex-row my-8" id="parceiros">
+    <div
+      className="sobre-container flex-col lg:flex-row py-8 mb-8"
+      id="parceiros"
+    >
       <div className="image-container order-last lg:order-first">
         <img src={parceiros} alt="Imagem de parceiros" />
       </div>

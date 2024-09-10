@@ -13,3 +13,9 @@ body {
   --swiper-theme-color: "#515839";
   --swiper-navigation-color: "#515839";
 }
+
+#sobre,
+#parceiros,
+#home {
+  scroll-margin-top: 96px;
+}

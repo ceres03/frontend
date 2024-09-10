@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import Categoria from "../../models/Categoria";
 import marketCart from "../../assets/outlineKart.svg";
 import { toastAlerta } from "../../utils/toastAlerta";
+import CardCategoriaSkeleton from "../Categorias/cardCategorias/cardCategoriaSkeleton";
 
 function CarrouselCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -38,7 +39,7 @@ function CarrouselCategorias() {
 
   return (
     <>
-      {!(categorias.length === 0) && (
+      {
         <>
           <div className="container mx-auto flex-col items-center text-[#515839] hidden lg:flex">
             <img
@@ -59,15 +60,24 @@ function CarrouselCategorias() {
               onSwiper={(swiper) => console.log(swiper)}
               className="w-full"
             >
-              {categorias.map((categoria, index) => (
-                <SwiperSlide key={index}>
-                  <CardCategorias key={categoria.id} categoria={categoria} />
-                </SwiperSlide>
-              ))}
+              {categorias.length !== 0
+                ? categorias.map((categoria, index) => (
+                    <SwiperSlide key={index}>
+                      <CardCategorias
+                        key={categoria.id}
+                        categoria={categoria}
+                      />
+                    </SwiperSlide>
+                  ))
+                : [...Array(8).keys()].map((index) => (
+                    <SwiperSlide key={index}>
+                      <CardCategoriaSkeleton />
+                    </SwiperSlide>
+                  ))}
             </Swiper>
           </div>
         </>
-      )}
+      }
     </>
   );
 }
