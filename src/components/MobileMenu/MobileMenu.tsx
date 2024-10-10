@@ -16,6 +16,7 @@ function MobileMenu({
   const [fadeAnimation, setFadeAnimation] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
+  let timeoutref = useRef(null);
 
   const navigate = useNavigate();
 
@@ -30,19 +31,25 @@ function MobileMenu({
       !menuRef.current.contains(event.target) &&
       event.target !== buttonRef.current
     ) {
+      setOpen(false);
       setFadeAnimation(false);
     }
   };
 
   const handleResize = () => {
+    setOpen(false);
     setFadeAnimation(false);
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
+    //document.addEventListener("mousedown", handleOutsideClick);
     window.addEventListener("resize", handleResize);
+
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      if (timeoutref.current) {
+        clearTimeout(timeoutref.current);
+      }
+      //document.removeEventListener("mousedown", handleOutsideClick);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -50,18 +57,27 @@ function MobileMenu({
   useEffect(() => {
     if (fadeAnimation) {
       setOpen(true);
-    } else {
-      setTimeout(() => {
+      if(timeoutref.current) {
+        clearTimeout(timeoutref.current);
+      }
+    } else if (isOpen) {
+      timeoutref.current = setTimeout(() => {
         setOpen(false);
       }, 500);
     }
+
+    return () => {
+      if (timeoutref.current) {
+        clearTimeout(timeoutref.current);
+      }
+    };
   }, [fadeAnimation]);
 
   return (
     <>
       <button
         className="xl:hidden block text-5xl cursor-pointer"
-        onClick={() => setFadeAnimation(!fadeAnimation)}
+        onClick={() => setFadeAnimation((prev: boolean) => !prev)}
         type="button"
         ref={buttonRef}
       >

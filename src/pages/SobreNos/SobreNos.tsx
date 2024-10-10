@@ -6,6 +6,7 @@ import joao from '../../assets/Joao.png'
 import julio from '../../assets/Julio.png'
 import vinicius from '../../assets/Vinicius.png'
 import caroline from '../../assets/Caroline.png'
+import sarah from '../../assets/Sarah.jpeg'
 
 
 
@@ -42,6 +43,9 @@ function SobreNos() {
             </a>
             <a href="https://www.linkedin.com/in/vinícius-bueno090101/" target='_blank' className='editFoto'>
                 <img src={caroline} alt="" className='editImagem' />
+            </a>
+            <a href="https://www.linkedin.com/in/sarahnakada/" target='_blank' className='editFoto'>
+                <img src={sarah} alt="Sarah Nakada" className='editImagem' />
             </a>
         </section>
     </div>
